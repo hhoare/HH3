@@ -6,26 +6,26 @@ boolean checkDir(int x, int y, int q) {
   while (i < badTiles.length) {
 
     if (q == 1) {
-      if (y > 0   && map1Data[y-1][x] == badTiles[i]    ) {
+      if (y > 0   && mapData[y-1][x] == badTiles[i]    ) {
         return true;
       }
     }
 
     if (q == 2) {
-      if (y < map1Data.length  && map1Data[y+1][x] == badTiles[i]    ) {
+      if (y < mapData.length-1  && mapData[y+1][x] == badTiles[i]    ) {
         return true;
       }
     }
 
     if (q == 3) {
-      if (x > 0   && map1Data[y][x - 1] == badTiles[i]    ) {
+      if (x > 0   && mapData[y][x - 1] == badTiles[i]    ) {
         return true;
       }
     }
 
     if (q == 4) {
-      //println(map1Data[y][x + 1]);
-      if (x < map1Data[0].length-1  && map1Data[y][x + 1] == badTiles[i]    ) {
+      //println(mapData[y][x + 1]);
+      if (x < mapData[0].length-1  && mapData[y][x + 1] == badTiles[i]    ) {
         
         return true;
       }

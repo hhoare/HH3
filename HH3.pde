@@ -36,15 +36,21 @@ void setup() {
   //addCurley("map1test.txt");
 
   loadImages();
+  //if (page==1){
+  mapData = overWorld;
 
-  mapWidth = map1Data[0].length*32;
-  mapHeight = map1Data.length*32;
+  mapWidth = mapData[0].length*32;
+  mapHeight = mapData.length*32;
 
 
-  enemies.add(new ENEMY(2, 2,-2,999,-2,5, 1));
+
+frogX = 56*32;
+frogY = 42*32;
+bordersAndCamera(); //this goes after setting the character position 
+
+
+  enemies.add(new ENEMY(2, 2, -2, 999, -2, 5, 1));
   ///enemies.add(new ENEMY(4, 5,-2,999,0,999, 2));
-
-  
 }
 
 
@@ -60,7 +66,11 @@ int gx, gy;
 void draw() {
   // println(uFix + " " +u + " " + keyPressed + "    " + random(1));
 
-  background(#FF0000);
+  background(-206680);
+
+  gx = (frogX+16)/32;
+  gy = (frogY+16)/32;
+
 
   if (keyPressed) {
     keyPressed1();
@@ -145,9 +155,9 @@ void draw() {
 //
 void map1() {
   int q = -1;
-  for (int r = 0; r < map1Data.length; r++) {
-    for (int c = 0; c < map1Data[0].length; c++) {    
-      q = map1Data[r][c];
+  for (int r = 0; r < mapData.length; r++) {
+    for (int c = 0; c < mapData[0].length; c++) {    
+      q = mapData[r][c];
       if (q!= 2 && c*grid-cameraX < 32*20   &&   c*grid-cameraX> -32   && r*grid-cameraY < 32*15   &&   r*grid-cameraY> -32)
         image(mt[q], c*grid-cameraX, r*grid-cameraY, grid, grid); //first 30 is columns, second is rows
     }
@@ -257,9 +267,7 @@ void bordersAndCamera() {
 //PUT ALL THIS STUFF IN THE INPUT TAB
 
 
-void mousePressed() {
-  //?
-}
+
 
 void mouseReleased() {
   //?
@@ -297,8 +305,7 @@ void keyPressed1() {
 
   // print("part1" );
 
-  gx = (frogX+16)/32;
-  gy = (frogY+16)/32;
+
 
 
 
@@ -310,7 +317,7 @@ void keyPressed1() {
 
 
 
-  //  println(map1Data[gy][gx + 1]  +  "  " + moveRight);
+  //  println(mapData[gy][gx + 1]  +  "  " + moveRight);
 
 
 
@@ -415,8 +422,6 @@ void keyPressed2() {
 
 
 
-  gx = (frogX+16)/32;
-  gy = (frogY+16)/32;
 
 
 
@@ -436,7 +441,7 @@ void keyPressed2() {
 
 
 
-  //  println(map1Data[gy][gx + 1]  +  "  " + moveRight);
+  //  println(mapData[gy][gx + 1]  +  "  " + moveRight);
 
 
 
