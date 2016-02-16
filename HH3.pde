@@ -11,7 +11,7 @@ int cameraY;
 
 //ASSUMING FROG VELOCITY = 40
 int mapWidth, mapHeight;
-
+//
 int r=0;
 int l=0;
 int u=0;
