@@ -49,8 +49,8 @@ frogY = 42*32;
 bordersAndCamera(); //this goes after setting the character position 
 
 
-  enemies.add(new ENEMY(2, 2, -2, 999, -2, 5, 1));
-  ///enemies.add(new ENEMY(4, 5,-2,999,0,999, 2));
+  enemies.add(new ENEMY(2, 2, -2, 999, -2, 5, 1)); //grid x, grid y, ub, db, lb, rb, skin
+  enemies.add(new ENEMY(4, 5,-2,999,0,999, 2));
 }
 
 
@@ -255,8 +255,8 @@ void bordersAndCamera() {
   if (frogY > cameraY + 32*12 && cameraY < (mapHeight - height)) {//ASSUMING FROG VELOCITY = 40
     cameraY = frogY - 32*12;
   }
-  if (frogY < cameraY + 32*8 && cameraY > 0) {//ASSUMING FROG VELOCITY = 40
-    cameraY = frogY - 32*8;
+  if (frogY < cameraY + 32*4 && cameraY > 0) {//ASSUMING FROG VELOCITY = 40
+    cameraY = frogY - 32*4;
   }
 }
 

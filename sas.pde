@@ -7,16 +7,16 @@ void addCurley(String s) {
     output[i] = "{"+q[i] + "},";
   }
 
-  saveStrings("data/cheese.txt", output);
+  saveStrings("data/cheese.txt", output); //change this to dungeon 1 once i make the dungeon map and save the numbers as a txt
 }
 
 
-void mousePressed() {
+void mousePressed() {     //this is just to test the new map loading
 
   frogX = 32*0;
   frogY = 32*2;
 
-  mapData = cheese;
+  mapData = dungeon1;
   mapWidth = mapData[0].length*32;
   mapHeight = mapData.length*32;
   cameraX = 0;

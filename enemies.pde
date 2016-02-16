@@ -8,8 +8,8 @@ void drawEnemy(int x, int y, int skin ) {
   else
     fill(#FF0000);
   rect(x, y, 32, 32);
-  //fill(#FF0000, 100);
-  //ellipse(x+16, y+16, 32*8, 32*8);
+  fill(#FF0000, 100);
+  ellipse(x+16, y+16, 32*8, 32*8);
 }
 
 
@@ -24,7 +24,7 @@ class ENEMY {
 
   int upBound, downBound, leftBound, rightBound;
 
-  ENEMY(int _gx, int _gy, int ub, int db, int lb, int rb, int _skin) {
+  ENEMY(int _gx, int _gy, int ub, int db, int lb, int rb, int _skin) { //grid x, grid y, ub, db, lb, rb, skin
 
     ex1 = _gx*32;
     ey1 = _gy*32;
@@ -47,7 +47,7 @@ class ENEMY {
 
       if (edir1 == 0) {
 
-        if (random(1) < .5) {
+    //    if (random(1) < 2) {
 
           if (ex1<frogX && checkDir(egx1, egy1, 4) &&  egx1<rightBound-1 ) {
             edir1 = 4;
@@ -63,7 +63,8 @@ class ENEMY {
             edir1 = 1;
             ecount1 = 0;
           }
-        } else {
+        //}
+        else {
           if (ey1<frogY && checkDir(egx1, egy1, 2 ) ) {
             edir1 = 2;
             ecount1 = 0;

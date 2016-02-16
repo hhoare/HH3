@@ -58,7 +58,7 @@ int[][] overWorld ={
 
 
 
-int[][] cheese ={
+int[][] dungeon1 ={
   {1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, 
   {2, 2, 5, 5, 5, 5, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1}, 
   {3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, 
@@ -141,7 +141,7 @@ void loadImages() {
     mt[r].copy(q, 1+17*(r%18), 1 + 17*(r/18), 16, 16, 0, 0, 16, 16);   //this loads sprite sheet
   }
 
- // println(mt[2].pixels[0]); //give number value of tile type in top left corner
+  // println(mt[2].pixels[0]); //give number value of tile type in top left corner
 
   q= loadImage("data/link.png");
 
@@ -186,4 +186,11 @@ void loadImages() {
   right2.copy(q, 48, 16, 16, 16, 0, 0, 16, 16);
   right3= new PImage(32, 16, ARGB);
   right3.copy(q, 64, 48, 32, 16, 0, 0, 32, 16);
+
+
+  q= loadImage("data/enemies+items+chars.png");
+  
+  
+  
+  
 }
