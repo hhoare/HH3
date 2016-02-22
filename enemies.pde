@@ -4,7 +4,7 @@ ArrayList<ENEMY> enemies  = new ArrayList<ENEMY>();
 
 void drawEnemy(int x, int y, int skin ) {
   if (skin == 1)
-    fill(#0000FF);
+      image(en1d1, x, y, 16, 16);
   else
     fill(#FF0000);
   rect(x, y, 32, 32);

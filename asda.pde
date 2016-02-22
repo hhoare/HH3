@@ -111,6 +111,22 @@ PImage right3; //sword
 
 int grid = 32;
 
+
+// enemy PImages
+
+PImage en1r1;
+PImage en1r2;
+PImage en1l1;
+PImage en1l2;
+PImage en1u1;
+PImage en1u2;
+PImage en1d1;
+PImage en1d2;
+
+
+
+
+
 void drawGrid() {
   stroke(0);
   strokeWeight(1);
@@ -188,9 +204,25 @@ void loadImages() {
   right3.copy(q, 64, 48, 32, 16, 0, 0, 32, 16);
 
 
-  q= loadImage("data/enemies+items+chars.png");
-  
-  
-  
-  
+  q= loadImage("data/enemies_items_chars.png");
+
+  en1r1= new PImage(16, 16, ARGB);    //en1's are the red ball guy
+  en1r1.copy(q, 48, 0, 16, 16, 0, 0, 16, 16); 
+  en1r2= new PImage(16, 16, ARGB);
+  en1r2.copy(q, 48, 16, 16, 16, 0, 0, 16, 16);
+
+  en1l1= new PImage(16, 16, ARGB);
+  en1l1.copy(q, 16, 0, 16, 16, 0, 0, 16, 16);
+  en1l2= new PImage(16, 16, ARGB);
+  en1l2.copy(q, 16, 16, 16, 16, 0, 0, 16, 16);
+
+  en1u1= new PImage(16, 16, ARGB);
+  en1u1.copy(q, 32, 0, 16, 16, 0, 0, 16, 16);
+  en1u2= new PImage(16, 16, ARGB);
+  en1u2.copy(q, 32, 16, 16, 16, 0, 0, 16, 16);
+
+  en1d1= new PImage(16, 16, ARGB);
+  en1d1.copy(q, 0, 0, 16, 16, 0, 0, 16, 16);
+  en1d2= new PImage(16, 16, ARGB);
+  en1d2.copy(q, 0, 16, 16, 16, 0, 0, 16, 16);
 }
