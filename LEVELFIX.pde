@@ -1,0 +1,7 @@
+String[] currentMap;
+
+
+void loadLevelFromText(){
+  
+  
+}
