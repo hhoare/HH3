@@ -38,22 +38,25 @@ void setup() {
   loadImages();
   loadImages2(); // enemies
   //  if (page==1) {
-  mapData = overWorld;
+ // mapData = overWorld;
 
 
 
-  mapWidth = mapData[0].length*32;
-  mapHeight = mapData.length*32;
-
-
-
+  //mapWidth = mapData[0].length*32;
+  //mapHeight = mapData.length*32;
+  
+  
+  
+  loadLevelFromText("hh_overWorld.txt");
   frogX = 56*32;
   frogY = 42*32;
   bordersAndCamera(); //this goes after setting the character position 
-
-
   enemies.add(new ENEMY(29, 41, 40, 45, 21, 44, 1)); //grid x, grid y, ub, db, lb, rb, skin
   // enemies.add(new ENEMY(4, 5, -2, 999, 0, 999, 2));
+  
+  
+  
+  
 }
 
 float health = 3;
