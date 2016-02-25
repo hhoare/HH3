@@ -39,7 +39,7 @@ class DROPS {
     }
     drawItems(ix-cameraX, iy-cameraY, itypes);
     
-    println(ix);
+    //println(ix);
   }
   
 

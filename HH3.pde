@@ -33,7 +33,7 @@ void setup() {
   frameRate(30);
   noStroke();
 
-  //addCurley("store.txt");
+  addCurley("store.txt");
 
   loadImages();
   loadImages2(); // enemies

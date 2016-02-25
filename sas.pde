@@ -24,5 +24,5 @@ void mousePressed() {     //this is just to test the new map loading
   
 
 
-  println(cameraX);
+  //println(cameraX);
 }
