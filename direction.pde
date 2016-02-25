@@ -1,4 +1,4 @@
-int[] badTiles = {2, 137, 131, 18, 34, 0, 22, 94};
+int[] badTiles = {2, 137, 131, 18, 34, 0, 22, 94, 58};
 
 boolean checkDir(int x, int y, int q) {
   int i = 0;
