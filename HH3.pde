@@ -33,7 +33,7 @@ void setup() {
   frameRate(30);
   noStroke();
 
-  addCurley("store.txt");
+  addCurley("overWorldx.txt");
 
   loadImages();
   loadImages2(); // enemies
@@ -47,7 +47,7 @@ void setup() {
   
   
   
-  loadLevelFromText("hh_overWorld.txt");
+  loadLevelFromText("OVERWORLD.txt");
   frogX = 56*32;
   frogY = 42*32;
   bordersAndCamera(); //this goes after setting the character position 
