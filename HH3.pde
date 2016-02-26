@@ -33,7 +33,7 @@ void setup() {
   frameRate(30);
   noStroke();
 
-  addCurley("overWorldx.txt");
+ // addCurley("overWorldx.txt");
 
   loadImages();
   loadImages2(); // enemies
