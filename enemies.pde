@@ -37,12 +37,13 @@ void drawEnemy(int x, int y, int skin ) {
     enhealth = 1;
   } 
 
-
+  /*
   noStroke();
-  fill(#00FF00, 250);
-  ellipse(x+16, y+16, 16, 16);
-  fill(#0000FF, 100);
-  ellipse(x+16, y+16, 60, 60);
+   fill(#00FF00, 250);
+   ellipse(x+16, y+16, 16, 16);
+   fill(#0000FF, 100);
+   ellipse(x+16, y+16, 60, 60);
+   */
 }
 
 
@@ -273,19 +274,16 @@ class ENEMY {
         if (enhealth==0) {
 
 
-          //if (random(1) <= .30) {  //gold rupee
-          // image(goldRupee, egx1, egy1, 32, 32);
-          drops.add(new DROPS(egx1, egy1, 1));
-        
-          /*  
-           } else if ( random(1)<= .5) {            //image for potion
-           image(potion, egx1, egy1, 32, 32);
-           } else if (random(1)<= .8) {            // image for blue
-           image(bRupee, egx1, egy1, 32, 32);
-           } else if ( random(1)<=1) {            // image for green rupee
-           image(grRupee, egx1, egy1, 32, 32);
-           }
-           */
+          if (random(1) <= .20) {  //gold rupee
+            drops.add(new DROPS(egx1, egy1, 1));
+          } else if ( random(1)<= .4) {            //image for potion
+            drops.add(new DROPS(egx1, egy1, 2));
+          } else if (random(1)<= .5) {            // image for blue
+            drops.add(new DROPS(egx1, egy1, 3));
+          } else if ( random(1)<=1) {            // image for green rupee
+            drops.add(new DROPS(egx1, egy1, 4));
+          }
+
 
           enemies.remove(this);
         }

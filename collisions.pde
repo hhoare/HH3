@@ -25,11 +25,11 @@ void drawHealth() {
   }
 
   for ( int i = 0; i < (int)health; i++) {
-    image(heartfull, 500-40*i, 3, 32, 32);
+    image(heartfull, 550-40*i, 3, 32, 32);
   }
 
   if ((health - (int)health) == .5) {
-    image(hearthalf, 500-40*((int)health), 3, 32, 32);
+    image(hearthalf, 550-40*((int)health), 3, 32, 32);
   }
 }
 

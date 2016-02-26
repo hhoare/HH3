@@ -2,11 +2,21 @@ ArrayList<DROPS> drops  = new ArrayList<DROPS>();
 
 
 void drawItems(int x, int y, int type) {
- // fill(#FF0000);
+  // fill(#FF0000);
   //rect(x,y,50,50);
   //println("hi");
   if (type == 1) {
     image(goldRupee, x, y, 32, 32);
+    //image(grRupee, x, y, 32, 32);
+  }
+  if (type ==2) {
+    image(potion, x, y, 32, 32);
+  }
+  if (type ==3) {
+    image(bRupee, x, y, 32, 32);
+  }
+  if (type ==4) {
+    image(grRupee, x, y, 32, 32);
   }
 }
 
@@ -38,11 +48,9 @@ class DROPS {
       pickup();
     }
     drawItems(ix-cameraX, iy-cameraY, itypes);
-    
+
     //println(ix);
   }
-  
-
 }
 
 void pickup() {

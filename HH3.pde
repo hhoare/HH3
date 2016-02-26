@@ -51,7 +51,7 @@ void setup() {
   frogX = 56*32;
   frogY = 42*32;
   bordersAndCamera(); //this goes after setting the character position 
-  enemies.add(new ENEMY(29, 41, 40, 45, 21, 44, 1)); //grid x, grid y, ub, db, lb, rb, skin
+  enemies.add(new ENEMY(29, 41, 31, 48, 21, 44, 1)); //grid x, grid y, ub, db, lb, rb, skin
   // enemies.add(new ENEMY(4, 5, -2, 999, 0, 999, 2));
   
   
@@ -162,7 +162,7 @@ void map1() {
 
 
 
-int types =8;
+int types =2;
 
 void bordersAndCamera() {
   //left
@@ -194,8 +194,8 @@ void bordersAndCamera() {
   if (frogY > cameraY + 32*12 && cameraY < (mapHeight - height)) {//ASSUMING FROG VELOCITY = 40
     cameraY = frogY - 32*12;
   }
-  if (frogY < cameraY + 32*4 && cameraY > 0) {//ASSUMING FROG VELOCITY = 40
-    cameraY = frogY - 32*4;
+  if (frogY < cameraY + 32*8 && cameraY > 0) {//ASSUMING FROG VELOCITY = 40
+    cameraY = frogY - 32*8;
   }
 }
 
@@ -330,22 +330,22 @@ void keyPressed1() {
 
 
   // println(types);
-  if (key == 'z' && types==2) {
+  if ((key == 'z' || key == 'Z') && types==2) {
     /// println("z");
     types=5;
   }
 
-  if (key == 'z' && types==3) {
+  if ((key == 'z' || key == 'Z') && types==3) {
     /// println("z");
     types=6;
   }
 
-  if (key == 'z' && types==4) {
+  if ((key == 'z' || key == 'Z') && types==4) {
     /// println("z");
     types=7;
   }
 
-  if (key == 'z' && types==1) {
+  if ((key == 'z' || key == 'Z') && types==1) {
     /// println("z");
     types=8;
   }
@@ -450,22 +450,22 @@ void keyPressed2() {
   }
 
   // println(types);
-  if (key == 'z' && types==2) {
+  if ((key == 'z' || key == 'Z') && types==2) {
     /// println("z");
     types=5;
   }
 
-  if (key == 'z' && types==3) {
+  if ((key == 'z' || key == 'Z') && types==3) {
     /// println("z");
     types=6;
   }
 
-  if (key == 'z' && types==4) {
+  if ((key == 'z' || key == 'Z') && types==4) {
     /// println("z");
     types=7;
   }
 
-  if (key == 'z' && types==1) {
+  if ((key == 'z' || key == 'Z') && types==1) {
     /// println("z");
     types=8;
   }
@@ -486,19 +486,19 @@ void keyPressed2() {
 
 void keyReleased() {
 
-  if (key == 'z' && types == 5) {
+  if ((key == 'z' || key == 'Z') && types == 5) {
     types = 2;
   }
 
-  if (key == 'z' && types == 6) {
+  if ((key == 'z' || key == 'Z') && types == 6) {
     types = 3;
   }
 
-  if (key == 'z' && types == 7) {
+  if ((key == 'z' || key == 'Z') && types == 7) {
     types = 4;
   }
 
-  if (key == 'z' && types == 8) {
+  if ((key == 'z' || key == 'Z') && types == 8) {
     types = 1;
   }
 
