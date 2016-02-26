@@ -47,7 +47,7 @@ void setup() {
   
   
   
-  loadLevelFromText("OVERWORLD.txt");
+  loadLevelFromText("OVERWORLD.txt");    //change to STOREMAP to load the store
   frogX = 56*32;
   frogY = 42*32;
   bordersAndCamera(); //this goes after setting the character position 
