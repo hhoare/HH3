@@ -51,7 +51,7 @@ void setup() {
   frogX = 56*32;
   frogY = 42*32;
   bordersAndCamera(); //this goes after setting the character position 
-  enemies.add(new ENEMY(29, 41, 31, 48, 21, 44, 1)); //grid x, grid y, ub, db, lb, rb, skin
+  enemies.add(new ENEMY(29, 41, 31, 48, 21, 44, 5)); //grid x, grid y, ub, db, lb, rb, skin
   // enemies.add(new ENEMY(4, 5, -2, 999, 0, 999, 2));
   
   
@@ -120,6 +120,7 @@ void draw() {
     text(gy, 300, 150);
 
     drawHealth();
+    drawCoins();
   }
 
 

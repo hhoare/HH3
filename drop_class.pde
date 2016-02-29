@@ -47,12 +47,12 @@ class DROPS {
 
     drawItems(ix-cameraX, iy-cameraY, itypes);
 
-    if (dist(ix+16, iy+16, frogX+16, frogY+16)  < 30) { // enemy hits you
+    if (dist(ix+16, iy+16, frogX+16, frogY+16)  < 30) { // item hits you
       drops.remove(this);
       if (itypes== 1) {
         coins+=50;
       }
-      if (itypes== 2) {
+      if (itypes==2) {
         health=healthmax;
       }
       if (itypes== 3) {
@@ -62,8 +62,8 @@ class DROPS {
         coins+=5;
       }
     }
-    println(coins);
+  //  println(coins);
   }
 }
 
-int coins;
+int coins= 000;

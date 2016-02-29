@@ -12,7 +12,6 @@ float enhealth;
 
 void enouch() {  //enemy health
   enhealth-=1;
-
 }
 
 
@@ -32,6 +31,18 @@ void drawHealth() {
     image(hearthalf, 550-40*((int)health), 3, 32, 32);
   }
 }
+
+
+void drawCoins() {
+  image(grRupee, 540, 420, 32, 32);
+  fill(0);
+  textSize(20);
+  text("x", 565, 440);
+  textSize(25);
+  text(coins, 580, 443);
+}
+
+
 
 void moveFrog() {
   if (u > 0) {

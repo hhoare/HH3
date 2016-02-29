@@ -4,6 +4,7 @@ ArrayList<ENEMY> enemies  = new ArrayList<ENEMY>();
 
 
 void drawEnemy(int x, int y, int skin ) {
+  // red ball guy
   if (skin == 1) {
     image(en1u1, x, y, 32, 32);
     enhealth = 1;
@@ -36,6 +37,39 @@ void drawEnemy(int x, int y, int skin ) {
     image(en1r2, x, y, 32, 32);
     enhealth = 1;
   } 
+  // red dude
+  if (skin == 5) {
+    image(en2u1, x, y, 32, 32);
+    enhealth = 2;
+  } 
+  if (skin == -5) {
+    image(en2u2, x, y, 32, 32);
+    enhealth = 2;
+  } 
+  if (skin == 6) {
+    image(en2d1, x, y, 32, 32);
+    enhealth = 2;
+  } 
+  if (skin == -6) {
+    image(en2d2, x, y, 32, 32);
+    enhealth = 2;
+  }   
+  if (skin == 7) {
+    image(en2l1, x, y, 32, 32);
+    enhealth = 2;
+  } 
+  if (skin == -7) {
+    image(en2l2, x, y, 32, 32);
+    enhealth = 2;
+  }
+  if (skin == 8) {
+    image(en2r1, x, y, 32, 32);
+    enhealth = 2;
+  } 
+  if (skin == -8) {
+    image(en2r2, x, y, 32, 32);
+    enhealth = 2;
+  }
 
   /*
   noStroke();
@@ -157,7 +191,12 @@ class ENEMY {
         if (ex1<frogX && checkDir(egx1, egy1, 4) &&  egx1<rightBound ) {
           edir1 = 4;
           ecount1 = 0;
-          etypes1 = 4;
+          if (etypes1<=4) {
+            etypes1 = 4;
+          }
+          if (etypes1>=5) {
+            etypes1 = 8;
+          }
         } else if (ex1 > frogX&& checkDir(egx1, egy1, 3) &&  egx1>leftBound) {
           edir1 = 3;
           ecount1 = 0;
@@ -178,7 +217,12 @@ class ENEMY {
         } else if (ex1<frogX && checkDir(egx1, egy1, 4) &&  egx1<rightBound  ) {
           edir1 = 4;
           ecount1 = 0;
-          etypes1 = 4;
+          if (etypes1<=4) {
+            etypes1 = 4;
+          }
+          if (etypes1>=5) {
+            etypes1 = 8;
+          }
         } else if (ex1 > frogX&& checkDir(egx1, egy1, 3) &&  egx1>leftBound) {
           edir1 = 3;
           ecount1 = 0;
@@ -195,11 +239,21 @@ class ENEMY {
       ecount1++;
       ex1 += 4;
 
-
       if (ecount1 < 4) {
-        skin=4;
+
+        if (etypes1<=4) {
+          skin=4;
+        }
+        if (etypes1>=5) {
+          skin=8;
+        }
       } else {
-        skin=-4;
+        if (etypes1<=4) {
+          skin=-4;
+        }        
+        if (etypes1>=5) {
+          skin = -8;
+        }
       }
 
 
@@ -216,9 +270,20 @@ class ENEMY {
       ecount1++;
       ex1 -= 4;
       if (ecount1 < 4) {
-        skin=3;
+
+        if (etypes1<=4) {
+          skin=3;
+        }
+        if (etypes1>=5) {
+          skin=7;
+        }
       } else {
-        skin=-3;
+        if (etypes1<=4) {
+          skin=-3;
+        }
+        if (etypes1>=5) {
+          skin=-7;
+        }
       }
       if (ecount1 > 7) {
         ecount1 = 0;
@@ -231,9 +296,19 @@ class ENEMY {
       ecount1++;
       ey1 -= 4;
       if (ecount1 < 4) {
-        skin=1;
+        if (etypes1<=4) {
+          skin=1;
+        }
+        if (etypes1>=5) {
+          skin=5;
+        }
       } else {
-        skin=-1;
+        if (etypes1<=4) {
+          skin=-1;
+        }
+        if (etypes1>=5) {
+          skin=-5;
+        }
       }
       if (ecount1 > 7) {
         ecount1 = 0;
@@ -246,9 +321,19 @@ class ENEMY {
       ecount1++;
       ey1 += 4;
       if (ecount1 < 4) {
-        skin=2;
+        if (etypes1<=4) {
+          skin=2;
+        }
+        if (etypes1>=5) {
+          skin=6;
+        }
       } else {
-        skin=-2;
+        if (etypes1<=4) {
+          skin=-2;
+        }
+        if (etypes1>=5) {
+          skin=-6;
+        }
       }
       if (ecount1 > 7) {
         ecount1 = 0;
@@ -329,6 +414,27 @@ void loadImages2() {
   en1d1.copy(q, 0, 0, 16, 16, 0, 0, 16, 16);
   en1d2= new PImage(16, 16, ARGB);
   en1d2.copy(q, 0, 16, 16, 16, 0, 0, 16, 16);
+
+
+  en2r1= new PImage(16, 16, ARGB);    //en2's are the red dude
+  en2r1.copy(q, 48, 0+32, 16, 16, 0, 0, 16, 16); 
+  en2r2= new PImage(16, 16, ARGB);
+  en2r2.copy(q, 48, 16+32, 16, 16, 0, 0, 16, 16);
+
+  en2l1= new PImage(16, 16, ARGB);
+  en2l1.copy(q, 16, 0+32, 16, 16, 0, 0, 16, 16);
+  en2l2= new PImage(16, 16, ARGB);
+  en2l2.copy(q, 16, 16+32, 16, 16, 0, 0, 16, 16);
+
+  en2u1= new PImage(16, 16, ARGB);
+  en2u1.copy(q, 32, 0+32, 16, 16, 0, 0, 16, 16);
+  en2u2= new PImage(16, 16, ARGB);
+  en2u2.copy(q, 32, 16+32, 16, 16, 0, 0, 16, 16);
+
+  en2d1= new PImage(16, 16, ARGB);
+  en2d1.copy(q, 0, 0+32, 16, 16, 0, 0, 16, 16);
+  en2d2= new PImage(16, 16, ARGB);
+  en2d2.copy(q, 0, 16+32, 16, 16, 0, 0, 16, 16);
 
   //items
   heartfull= new PImage(16, 16, ARGB);
