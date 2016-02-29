@@ -44,14 +44,26 @@ class DROPS {
     igx=(ix+16)/32;
     igy=(iy+16)/32;
 
-    if (dist(ix+16, iy+16, frogX+16, frogY+16)  < 30) { // enemy hits you
-      pickup();
-    }
+
     drawItems(ix-cameraX, iy-cameraY, itypes);
 
-    //println(ix);
+    if (dist(ix+16, iy+16, frogX+16, frogY+16)  < 30) { // enemy hits you
+      drops.remove(this);
+      if (itypes== 1) {
+        coins+=50;
+      }
+      if (itypes== 2) {
+        health=healthmax;
+      }
+      if (itypes== 3) {
+        coins+=20;
+      }
+      if (itypes== 4) {
+        coins+=5;
+      }
+    }
+    println(coins);
   }
 }
 
-void pickup() {
-}
+int coins;

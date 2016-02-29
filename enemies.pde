@@ -260,7 +260,7 @@ class ENEMY {
     //collision with sword
     //collision with link
 
-    if (dist(ex1+16, ey1+16, frogX+16, frogY+16)  < 30) { // enemy hits you
+    if (dist(ex1+16, ey1+16, frogX+16, frogY+16)  < 26) { // enemy hits you
       ouch();
     }
 

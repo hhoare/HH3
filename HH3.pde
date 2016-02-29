@@ -58,8 +58,8 @@ void setup() {
   
   
 }
-
-float health = 3;
+float healthmax = 3;
+float health = healthmax;
 int healthcounter = 0;
 //if healthcounter is 0 and you collide, then health -=.5 and health counter = 1;
 
