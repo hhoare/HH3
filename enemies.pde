@@ -535,11 +535,11 @@ class ENEMY {
       enouch();
       if (enhealth==0) {
 
-        if (random(1) <= .15) {  //gold rupee
+        if (random(1) <= .1) {  //gold rupee
           drops.add(new DROPS(egx1, egy1, 1));
-        } else if ( random(1)<= .3) {            //image for potion
+        } else if ( random(1)<= .2) {            //image for potion
           drops.add(new DROPS(egx1, egy1, 2));
-        } else if (random(1)<= .45) {            // image for blue
+        } else if (random(1)<= .40) {            // image for blue
           drops.add(new DROPS(egx1, egy1, 3));
         } else if ( random(1)<=1) {            // image for green rupee
           drops.add(new DROPS(egx1, egy1, 4));
@@ -583,7 +583,7 @@ class ENEMY {
     stopMe = 1;
     enhealth-=1;
     types-=4;
-    println("yes");
+  //  println("yes");
   }
 }
 

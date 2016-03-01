@@ -49,10 +49,14 @@ void setup() {
 
   loadLevelFromText("OVERWORLD.txt");    //change to STOREMAP to load the store
   frogX = 56*32;
-  frogY = 42*32;
+  frogY = 46*32;
   bordersAndCamera(); //this goes after setting the character position 
-  enemies.add(new ENEMY(29, 41, 31, 48, 22, 44, 7)); //grid x, grid y, ub, db, lb, rb, skin
-  enemies.add(new ENEMY(23, 35, 31, 48, 22, 44, 1));
+  //first area to left
+  enemies.add(new ENEMY(25, 35, 31, 48, 22, 44, 1)); //grid x, grid y, ub, db, lb, rb, skin
+  enemies.add(new ENEMY(36, 35, 31, 48, 22, 44, 1));
+  enemies.add(new ENEMY(36, 47, 31, 48, 22, 44, 1));
+  enemies.add(new ENEMY(25, 47, 31, 48, 22, 44, 1));
+  enemies.add(new ENEMY(23, 41, 31, 48, 22, 44, 1));
 }
 float healthmax = 3;
 float health = healthmax;
@@ -262,7 +266,7 @@ void keyPressed1() {
   if (key == 'g')
     dGrid = !dGrid;
 
-  if (((key == 'w' || keyCode == UP) || uFix == 1) && ( u == 0 && moveUp)) {
+  if (((key == 'w' || keyCode == UP) || uFix == 1) && (u == 0 && moveUp)) {
     if (lFix == 1) {
       lFix = 2;
     }
@@ -454,14 +458,6 @@ void keyReleased() {
   if ((key == 'z' || key == 'Z') && types>4) {
     types-=4;
   }
-
-
-
-
-
-
-
-
 
 
 
