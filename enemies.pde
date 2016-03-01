@@ -199,7 +199,7 @@ class ENEMY {
     }
 
     if (type == 2) {
-      enhealth = 10;
+      enhealth = 1;
     }
   }
 
@@ -332,21 +332,27 @@ class ENEMY {
     //collision with link
 
     if (dist(ex1+16, ey1+16, frogX+16, frogY+16)  < 26) { // enemy hits you
+
+      // println(types);
+
       ouch();
     }
 
-
     //below is sword hits enemy 
-    if ((type == 5 &&  dist(egx1+16, egy1+16, frogX+18, frogY)  < 40)      ||  (type == 4 &&  dist(egx1+16, egy1+16, frogX+18, frogY)  < 40)         )    // FIX THIS, REDRAW THE CIRCLES AND SHIT
+    if ((types == 8 &&  dist(ex1+16, ey1+16, frogX+18, frogY+16) < 26)  ||  (types == 6 &&  dist(ex1+16, ey1+16, frogX+18, frogY+48)  < 26) ||  (types == 7 &&  dist(ex1+16, ey1+16, frogX-20, frogY+16)  < 26) ||  (types == 5 &&  dist(ex1+16, egy1+16, frogX+14, frogY-20) < 26)  )    // FIX THIS, REDRAW THE CIRCLES AND SHIT
     {
+   //   println("yes");
+
+
+
       enouch();
       if (enhealth==0) {
 
-        if (random(1) <= .20) {  //gold rupee
+        if (random(1) <= .15) {  //gold rupee
           drops.add(new DROPS(egx1, egy1, 1));
-        } else if ( random(1)<= .4) {            //image for potion
+        } else if ( random(1)<= .3) {            //image for potion
           drops.add(new DROPS(egx1, egy1, 2));
-        } else if (random(1)<= .5) {            // image for blue
+        } else if (random(1)<= .45) {            // image for blue
           drops.add(new DROPS(egx1, egy1, 3));
         } else if ( random(1)<=1) {            // image for green rupee
           drops.add(new DROPS(egx1, egy1, 4));
@@ -366,6 +372,8 @@ class ENEMY {
     if (type == 2) {
       drawEnemy2(ex1-cameraX, ey1-cameraY, skin);
     }
+    
+    
   }
 
 

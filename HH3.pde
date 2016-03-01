@@ -33,30 +33,26 @@ void setup() {
   frameRate(30);
   noStroke();
 
- // addCurley("overWorldx.txt");
+  // addCurley("overWorldx.txt");
 
   loadImages();
   loadImages2(); // enemies
   //  if (page==1) {
- // mapData = overWorld;
+  // mapData = overWorld;
 
 
 
   //mapWidth = mapData[0].length*32;
   //mapHeight = mapData.length*32;
-  
-  
-  
+
+
+
   loadLevelFromText("OVERWORLD.txt");    //change to STOREMAP to load the store
   frogX = 56*32;
   frogY = 42*32;
   bordersAndCamera(); //this goes after setting the character position 
-  enemies.add(new ENEMY(29, 41, 31, 48, 21, 44, 2)); //grid x, grid y, ub, db, lb, rb, skin
-  // enemies.add(new ENEMY(4, 5, -2, 999, 0, 999, 2));
-  
-  
-  
-  
+  enemies.add(new ENEMY(29, 41, 31, 48, 22, 44, 2)); //grid x, grid y, ub, db, lb, rb, skin
+  enemies.add(new ENEMY(23, 35, 31, 48, 22, 44, 1));
 }
 float healthmax = 3;
 float health = healthmax;
@@ -73,7 +69,7 @@ int gx, gy;
 
 void draw() {
   // println(uFix + " " +u + " " + keyPressed + "    " + random(1));
-//  println(linkSwordFix);
+  //  println(linkSwordFix);
   if (page==0) {
     noStroke();
     image(title, 0, 0, 296, 164);
@@ -335,18 +331,10 @@ void keyPressed1() {
 
 
 
-  if ((key == 'z' || key == 'Z') && types<=4 ){
+  if ((key == 'z' || key == 'Z') && types<=4 ) {
     types+=4;
-     linkSwordFix = 1;
-    
+    linkSwordFix = 1;
   }
-  
-  
-  
-  
-  
-  
-  
 }
 
 
@@ -446,14 +434,6 @@ void keyPressed2() {
     rFix = 1;
     newFix = 4;
   }
-
-
-
-
-
-  
-  
-  
 }
 
 
@@ -471,19 +451,17 @@ int linkSwordFix = 0;
 
 void keyReleased() {
 
-  if ((key == 'z' || key == 'Z') && types>4){
+  if ((key == 'z' || key == 'Z') && types>4) {
     types-=4;
-
-    
   }
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
 
 
 
