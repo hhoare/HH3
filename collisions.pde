@@ -8,11 +8,9 @@ void ouch() {
   }
 }
 
-float enhealth;
 
-void enouch() {  //enemy health
-  enhealth-=1;
-}
+
+
 
 
 void drawHealth() {

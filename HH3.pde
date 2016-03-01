@@ -51,7 +51,7 @@ void setup() {
   frogX = 56*32;
   frogY = 42*32;
   bordersAndCamera(); //this goes after setting the character position 
-  enemies.add(new ENEMY(29, 41, 31, 48, 21, 44, 5)); //grid x, grid y, ub, db, lb, rb, skin
+  enemies.add(new ENEMY(29, 41, 31, 48, 21, 44, 2)); //grid x, grid y, ub, db, lb, rb, skin
   // enemies.add(new ENEMY(4, 5, -2, 999, 0, 999, 2));
   
   
@@ -73,6 +73,7 @@ int gx, gy;
 
 void draw() {
   // println(uFix + " " +u + " " + keyPressed + "    " + random(1));
+//  println(linkSwordFix);
   if (page==0) {
     noStroke();
     image(title, 0, 0, 296, 164);
@@ -330,26 +331,22 @@ void keyPressed1() {
 
 
 
-  // println(types);
-  if ((key == 'z' || key == 'Z') && types==2) {
-    /// println("z");
-    types=5;
-  }
 
-  if ((key == 'z' || key == 'Z') && types==3) {
-    /// println("z");
-    types=6;
-  }
 
-  if ((key == 'z' || key == 'Z') && types==4) {
-    /// println("z");
-    types=7;
-  }
 
-  if ((key == 'z' || key == 'Z') && types==1) {
-    /// println("z");
-    types=8;
+
+  if ((key == 'z' || key == 'Z') && types<=4 ){
+    types+=4;
+     linkSwordFix = 1;
+    
   }
+  
+  
+  
+  
+  
+  
+  
 }
 
 
@@ -450,26 +447,13 @@ void keyPressed2() {
     newFix = 4;
   }
 
-  // println(types);
-  if ((key == 'z' || key == 'Z') && types==2) {
-    /// println("z");
-    types=5;
-  }
 
-  if ((key == 'z' || key == 'Z') && types==3) {
-    /// println("z");
-    types=6;
-  }
 
-  if ((key == 'z' || key == 'Z') && types==4) {
-    /// println("z");
-    types=7;
-  }
 
-  if ((key == 'z' || key == 'Z') && types==1) {
-    /// println("z");
-    types=8;
-  }
+
+  
+  
+  
 }
 
 
@@ -481,27 +465,25 @@ void keyPressed2() {
 
 
 
-
+int linkSwordFix = 0;
 
 
 
 void keyReleased() {
 
-  if ((key == 'z' || key == 'Z') && types == 5) {
-    types = 2;
-  }
+  if ((key == 'z' || key == 'Z') && types>4){
+    types-=4;
 
-  if ((key == 'z' || key == 'Z') && types == 6) {
-    types = 3;
+    
   }
-
-  if ((key == 'z' || key == 'Z') && types == 7) {
-    types = 4;
-  }
-
-  if ((key == 'z' || key == 'Z') && types == 8) {
-    types = 1;
-  }
+  
+  
+  
+  
+  
+  
+  
+  
 
 
 

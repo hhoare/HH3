@@ -1,75 +1,83 @@
 ArrayList<ENEMY> enemies  = new ArrayList<ENEMY>();
 
 
+void drawEnemy2(int x, int y, int skin ) {
+
+  // red dude
+  if (skin == 1) {
+    image(en2u1, x, y, 32, 32);
+    //enhealth = 2;
+  } 
+  if (skin == -1) {
+    image(en2u2, x, y, 32, 32);
+    //enhealth = 2;
+  } 
+  if (skin == 2) {
+    image(en2d1, x, y, 32, 32);
+    //enhealth = 2;
+  } 
+  if (skin == -2) {
+    image(en2d2, x, y, 32, 32);
+    // enhealth = 2;
+  }   
+  if (skin == 3) {
+    image(en2l1, x, y, 32, 32);
+    // enhealth = 2;
+  } 
+  if (skin == -3) {
+    image(en2l2, x, y, 32, 32);
+    // enhealth = 2;
+  }
+  if (skin == 4) {
+    image(en2r1, x, y, 32, 32);
+    // enhealth = 2;
+  } 
+  if (skin == -4) {
+    image(en2r2, x, y, 32, 32);
+    // enhealth = 2;
+  }
+}
+
 
 
 void drawEnemy(int x, int y, int skin ) {
   // red ball guy
   if (skin == 1) {
     image(en1u1, x, y, 32, 32);
-    enhealth = 1;
+    //  enhealth = 1;
   } 
   if (skin == -1) {
     image(en1u2, x, y, 32, 32);
-    enhealth = 1;
+    //  enhealth = 1;
   } 
   if (skin == 2) {
     image(en1d1, x, y, 32, 32);
-    enhealth = 1;
+    // enhealth = 1;
   } 
   if (skin == -2) {
     image(en1d2, x, y, 32, 32);
-    enhealth = 1;
+    // enhealth = 1;
   } 
   if (skin == 3) {
     image(en1l1, x, y, 32, 32);
-    enhealth = 1;
+    /// enhealth = 1;
   } 
   if (skin == -3) {
     image(en1l2, x, y, 32, 32);
-    enhealth = 1;
+    ///  enhealth = 1;
   } 
   if (skin == 4) {
     image(en1r1, x, y, 32, 32);
-    enhealth = 1;
+    /// enhealth = 1;
   } 
   if (skin == -4) {
     image(en1r2, x, y, 32, 32);
-    enhealth = 1;
+    /// enhealth = 1;
   } 
-  // red dude
-  if (skin == 5) {
-    image(en2u1, x, y, 32, 32);
-    enhealth = 2;
-  } 
-  if (skin == -5) {
-    image(en2u2, x, y, 32, 32);
-    enhealth = 2;
-  } 
-  if (skin == 6) {
-    image(en2d1, x, y, 32, 32);
-    enhealth = 2;
-  } 
-  if (skin == -6) {
-    image(en2d2, x, y, 32, 32);
-    enhealth = 2;
-  }   
-  if (skin == 7) {
-    image(en2l1, x, y, 32, 32);
-    enhealth = 2;
-  } 
-  if (skin == -7) {
-    image(en2l2, x, y, 32, 32);
-    enhealth = 2;
-  }
-  if (skin == 8) {
-    image(en2r1, x, y, 32, 32);
-    enhealth = 2;
-  } 
-  if (skin == -8) {
-    image(en2r2, x, y, 32, 32);
-    enhealth = 2;
-  }
+
+
+
+
 
   /*
   noStroke();
@@ -159,11 +167,19 @@ class ENEMY {
   int egy1;
   int edir1;
   int ecount1;
-  int skin;
+  int skin = 1;
+  ;
+
+  int type;
 
   int upBound, downBound, leftBound, rightBound;
 
-  ENEMY(int _gx, int _gy, int ub, int db, int lb, int rb, int _skin) { //grid x, grid y, ub, db, lb, rb, skin
+
+  int enhealth;
+
+  int stopMe;
+
+  ENEMY(int _gx, int _gy, int ub, int db, int lb, int rb, int type) { //grid x, grid y, ub, db, lb, rb, skin
 
     ex1 = _gx*32;
     ey1 = _gy*32;
@@ -172,7 +188,19 @@ class ENEMY {
     leftBound = lb-1;
     rightBound = rb+1;
 
-    skin=_skin;
+
+
+
+    this.type = type;
+
+
+    if (type == 1) {
+      enhealth = 1;
+    }
+
+    if (type == 2) {
+      enhealth = 10;
+    }
   }
 
 
@@ -181,8 +209,16 @@ class ENEMY {
     egy1=(ey1+16)/32;
 
 
+    if (stopMe > 0) {
 
-    if (    (dist(ex1, ey1, frogX+16, frogY+16 ) < 32*4 ) &&  egx1<=rightBound && egx1>=leftBound && egy1>=upBound && egy1<=downBound ) {//) {
+      stopMe++;
+      if (stopMe == 10) {
+        stopMe = 0;
+      }
+    }
+
+
+    if ( stopMe == 0 && (   (dist(ex1, ey1, frogX+16, frogY+16 ) < 32*4 ) &&  egx1<=rightBound && egx1>=leftBound && egy1>=upBound && egy1<=downBound) ) {//) {
 
       if (edir1 == 0) {
 
@@ -191,12 +227,7 @@ class ENEMY {
         if (ex1<frogX && checkDir(egx1, egy1, 4) &&  egx1<rightBound ) {
           edir1 = 4;
           ecount1 = 0;
-          if (etypes1<=4) {
-            etypes1 = 4;
-          }
-          if (etypes1>=5) {
-            etypes1 = 8;
-          }
+          etypes1 = 4;
         } else if (ex1 > frogX&& checkDir(egx1, egy1, 3) &&  egx1>leftBound) {
           edir1 = 3;
           ecount1 = 0;
@@ -217,12 +248,7 @@ class ENEMY {
         } else if (ex1<frogX && checkDir(egx1, egy1, 4) &&  egx1<rightBound  ) {
           edir1 = 4;
           ecount1 = 0;
-          if (etypes1<=4) {
-            etypes1 = 4;
-          }
-          if (etypes1>=5) {
-            etypes1 = 8;
-          }
+          etypes1 = 4;
         } else if (ex1 > frogX&& checkDir(egx1, egy1, 3) &&  egx1>leftBound) {
           edir1 = 3;
           ecount1 = 0;
@@ -241,19 +267,9 @@ class ENEMY {
 
       if (ecount1 < 4) {
 
-        if (etypes1<=4) {
-          skin=4;
-        }
-        if (etypes1>=5) {
-          skin=8;
-        }
+        skin=4;
       } else {
-        if (etypes1<=4) {
-          skin=-4;
-        }        
-        if (etypes1>=5) {
-          skin = -8;
-        }
+        skin=-4;
       }
 
 
@@ -271,19 +287,9 @@ class ENEMY {
       ex1 -= 4;
       if (ecount1 < 4) {
 
-        if (etypes1<=4) {
-          skin=3;
-        }
-        if (etypes1>=5) {
-          skin=7;
-        }
+        skin=3;
       } else {
-        if (etypes1<=4) {
-          skin=-3;
-        }
-        if (etypes1>=5) {
-          skin=-7;
-        }
+        skin=-3;
       }
       if (ecount1 > 7) {
         ecount1 = 0;
@@ -296,19 +302,9 @@ class ENEMY {
       ecount1++;
       ey1 -= 4;
       if (ecount1 < 4) {
-        if (etypes1<=4) {
-          skin=1;
-        }
-        if (etypes1>=5) {
-          skin=5;
-        }
+        skin=1;
       } else {
-        if (etypes1<=4) {
-          skin=-1;
-        }
-        if (etypes1>=5) {
-          skin=-5;
-        }
+        skin=-1;
       }
       if (ecount1 > 7) {
         ecount1 = 0;
@@ -321,19 +317,9 @@ class ENEMY {
       ecount1++;
       ey1 += 4;
       if (ecount1 < 4) {
-        if (etypes1<=4) {
-          skin=2;
-        }
-        if (etypes1>=5) {
-          skin=6;
-        }
+        skin=2;
       } else {
-        if (etypes1<=4) {
-          skin=-2;
-        }
-        if (etypes1>=5) {
-          skin=-6;
-        }
+        skin=-2;
       }
       if (ecount1 > 7) {
         ecount1 = 0;
@@ -351,32 +337,44 @@ class ENEMY {
 
 
     //below is sword hits enemy 
-    if (  ((dist(egx1+16, egy1+16, frogX+18, frogY+48)< 40) ||  (dist(ex1, ey1, frogX-20, frogY+16)< 24) ||  (dist(ex1, ey1, frogX+48, frogY+16)< 24) ||  (dist(ex1, ey1, frogX+14, frogY-20)< 24)) && types >4  ) { 
-      {
+    if ((type == 5 &&  dist(egx1+16, egy1+16, frogX+18, frogY)  < 40)      ||  (type == 4 &&  dist(egx1+16, egy1+16, frogX+18, frogY)  < 40)         )    // FIX THIS, REDRAW THE CIRCLES AND SHIT
+    {
+      enouch();
+      if (enhealth==0) {
 
-
-        enouch();
-        if (enhealth==0) {
-
-
-          if (random(1) <= .20) {  //gold rupee
-            drops.add(new DROPS(egx1, egy1, 1));
-          } else if ( random(1)<= .4) {            //image for potion
-            drops.add(new DROPS(egx1, egy1, 2));
-          } else if (random(1)<= .5) {            // image for blue
-            drops.add(new DROPS(egx1, egy1, 3));
-          } else if ( random(1)<=1) {            // image for green rupee
-            drops.add(new DROPS(egx1, egy1, 4));
-          }
-
-
-          enemies.remove(this);
+        if (random(1) <= .20) {  //gold rupee
+          drops.add(new DROPS(egx1, egy1, 1));
+        } else if ( random(1)<= .4) {            //image for potion
+          drops.add(new DROPS(egx1, egy1, 2));
+        } else if (random(1)<= .5) {            // image for blue
+          drops.add(new DROPS(egx1, egy1, 3));
+        } else if ( random(1)<=1) {            // image for green rupee
+          drops.add(new DROPS(egx1, egy1, 4));
         }
+
+
+        enemies.remove(this);
       }
     }
 
 
-    drawEnemy(ex1-cameraX, ey1-cameraY, skin);
+    if (type == 1) {
+      drawEnemy(ex1-cameraX, ey1-cameraY, skin);
+    }
+
+
+    if (type == 2) {
+      drawEnemy2(ex1-cameraX, ey1-cameraY, skin);
+    }
+  }
+
+
+  void enouch() {  //enemy health
+    ///println("hi" + types);
+
+    stopMe = 1;
+    enhealth-=1;
+    types-=4;
   }
 }
 

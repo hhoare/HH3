@@ -33,28 +33,36 @@ void drawLink() {
       image(right2, frogX - cameraX, frogY - cameraY, 32, 32);
     }
   }
+  
+  
+  
+  
+  
+  
+  
+  
 
-  if (types==5) {     //down sword
+  if (types==6) {     //down sword
     image(down3, frogX - cameraX, frogY - cameraY, 32, 64);
     noStroke();
    // fill(#0000FF, 250);
    // ellipse(frogX+18-cameraX, frogY+48- cameraY, 16, 16);
   }
 
-  if (types==6) {     //left sword
+  if (types==7) {     //left sword
     image(left3, frogX - cameraX-32, frogY - cameraY, 64, 32);
     noStroke();
    // fill(#0000FF, 250);
    // ellipse(frogX-20-cameraX, frogY+16- cameraY, 16, 16);
   }
-  if (types==7) {     //right sword
+  if (types==8) {     //right sword
     image(right3, frogX - cameraX, frogY - cameraY, 64, 32);
     noStroke();
    // fill(#0000FF, 250);
    // ellipse(frogX+48-cameraX, frogY+16- cameraY, 16, 16);
   }
 
-  if (types==8) {     //up sword
+  if (types==5) {     //up sword
     image(up3, frogX - cameraX, frogY - cameraY-32, 32, 64);
     noStroke();
  //   fill(#0000FF, 250);

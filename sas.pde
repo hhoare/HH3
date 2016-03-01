@@ -12,7 +12,7 @@ void addCurley(String s) {
 
 
 void mousePressed() {     //this is just to test the new map loading
-  page=2;
+  page=1;
 
   mapData = store;
   mapWidth = mapData[0].length*32;
