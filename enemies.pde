@@ -1,5 +1,47 @@
 ArrayList<ENEMY> enemies  = new ArrayList<ENEMY>();
 
+void drawEnemy(int x, int y, int skin ) {
+  // red ball guy
+  if (skin == 1) {
+    image(en1u1, x, y, 32, 32);
+    //  enhealth = 1;
+  } 
+  if (skin == -1) {
+    image(en1u2, x, y, 32, 32);
+    //  enhealth = 1;
+  } 
+  if (skin == 2) {
+    image(en1d1, x, y, 32, 32);
+    // enhealth = 1;
+  } 
+  if (skin == -2) {
+    image(en1d2, x, y, 32, 32);
+    // enhealth = 1;
+  } 
+  if (skin == 3) {
+    image(en1l1, x, y, 32, 32);
+    /// enhealth = 1;
+  } 
+  if (skin == -3) {
+    image(en1l2, x, y, 32, 32);
+    ///  enhealth = 1;
+  } 
+  if (skin == 4) {
+    image(en1r1, x, y, 32, 32);
+    /// enhealth = 1;
+  } 
+  if (skin == -4) {
+    image(en1r2, x, y, 32, 32);
+    /// enhealth = 1;
+  } 
+  /*
+  noStroke();
+   fill(#00FF00, 250);
+   ellipse(x+16, y+16, 16, 16);
+   fill(#0000FF, 100);
+   ellipse(x+16, y+16, 60, 60);
+   */
+}
 
 void drawEnemy2(int x, int y, int skin ) {
 
@@ -38,54 +80,78 @@ void drawEnemy2(int x, int y, int skin ) {
   }
 }
 
+void drawEnemy3(int x, int y, int skin ) {
 
-
-void drawEnemy(int x, int y, int skin ) {
-  // red ball guy
+  // red dude
   if (skin == 1) {
-    image(en1u1, x, y, 32, 32);
-    //  enhealth = 1;
+    image(en3u1, x, y, 32, 32);
+    //enhealth = 2;
   } 
   if (skin == -1) {
-    image(en1u2, x, y, 32, 32);
-    //  enhealth = 1;
+    image(en3u2, x, y, 32, 32);
+    //enhealth = 2;
   } 
   if (skin == 2) {
-    image(en1d1, x, y, 32, 32);
-    // enhealth = 1;
+    image(en3d1, x, y, 32, 32);
+    //enhealth = 2;
   } 
   if (skin == -2) {
-    image(en1d2, x, y, 32, 32);
-    // enhealth = 1;
-  } 
+    image(en3d2, x, y, 32, 32);
+    // enhealth = 2;
+  }   
   if (skin == 3) {
-    image(en1l1, x, y, 32, 32);
-    /// enhealth = 1;
+    image(en3l1, x, y, 32, 32);
+    // enhealth = 2;
   } 
   if (skin == -3) {
-    image(en1l2, x, y, 32, 32);
-    ///  enhealth = 1;
-  } 
+    image(en3l2, x, y, 32, 32);
+    // enhealth = 2;
+  }
   if (skin == 4) {
-    image(en1r1, x, y, 32, 32);
-    /// enhealth = 1;
+    image(en3r1, x, y, 32, 32);
+    // enhealth = 2;
   } 
   if (skin == -4) {
-    image(en1r2, x, y, 32, 32);
-    /// enhealth = 1;
+    image(en3r2, x, y, 32, 32);
+    // enhealth = 2;
+  }
+}
+
+void drawEnemy4(int x, int y, int skin ) {
+
+  // red dude
+  if (skin == 1) {
+    image(en4u1, x, y, 32, 32);
+    //enhealth = 2;
   } 
-
-
-
-
-
-  /*
-  noStroke();
-   fill(#00FF00, 250);
-   ellipse(x+16, y+16, 16, 16);
-   fill(#0000FF, 100);
-   ellipse(x+16, y+16, 60, 60);
-   */
+  if (skin == -1) {
+    image(en4u2, x, y, 32, 32);
+    //enhealth = 2;
+  } 
+  if (skin == 2) {
+    image(en4d1, x, y, 32, 32);
+    //enhealth = 2;
+  } 
+  if (skin == -2) {
+    image(en4d2, x, y, 32, 32);
+    // enhealth = 2;
+  }   
+  if (skin == 3) {
+    image(en4l1, x, y, 32, 32);
+    // enhealth = 2;
+  } 
+  if (skin == -3) {
+    image(en4l2, x, y, 32, 32);
+    // enhealth = 2;
+  }
+  if (skin == 4) {
+    image(en4r1, x, y, 32, 32);
+    // enhealth = 2;
+  } 
+  if (skin == -4) {
+    image(en4r2, x, y, 32, 32);
+    // enhealth = 2;
+  }
 }
 
 
@@ -199,6 +265,10 @@ class ENEMY {
     }
 
     if (type == 2) {
+      enhealth = 1;                                                           // IT DOESNT WORK IF HEALTH IS MORE THAN 1
+    }
+
+    if (type == 3) {
       enhealth = 1;
     }
   }
@@ -341,7 +411,7 @@ class ENEMY {
     //below is sword hits enemy 
     if ((types == 8 &&  dist(ex1+16, ey1+16, frogX+18, frogY+16) < 26)  ||  (types == 6 &&  dist(ex1+16, ey1+16, frogX+18, frogY+48)  < 26) ||  (types == 7 &&  dist(ex1+16, ey1+16, frogX-20, frogY+16)  < 26) ||  (types == 5 &&  dist(ex1+16, egy1+16, frogX+14, frogY-20) < 26)  )    // FIX THIS, REDRAW THE CIRCLES AND SHIT
     {
-   //   println("yes");
+      //   println("yes");
 
 
 
@@ -372,8 +442,12 @@ class ENEMY {
     if (type == 2) {
       drawEnemy2(ex1-cameraX, ey1-cameraY, skin);
     }
-    
-    
+    if (type == 3) {
+      drawEnemy3(ex1-cameraX, ey1-cameraY, skin);
+    }
+    if (type == 4) {
+      drawEnemy4(ex1-cameraX, ey1-cameraY, skin);
+    }
   }
 
 
@@ -383,6 +457,7 @@ class ENEMY {
     stopMe = 1;
     enhealth-=1;
     types-=4;
+    println("yes");
   }
 }
 
@@ -441,6 +516,49 @@ void loadImages2() {
   en2d1.copy(q, 0, 0+32, 16, 16, 0, 0, 16, 16);
   en2d2= new PImage(16, 16, ARGB);
   en2d2.copy(q, 0, 16+32, 16, 16, 0, 0, 16, 16);
+
+
+  en3r1= new PImage(16, 16, ARGB);    //en3's are the red knight
+  en3r1.copy(q, 48, 0+32+32, 16, 16, 0, 0, 16, 16); 
+  en3r2= new PImage(16, 16, ARGB);
+  en3r2.copy(q, 48, 16+32+32, 16, 16, 0, 0, 16, 16);
+
+  en3l1= new PImage(16, 16, ARGB);
+  en3l1.copy(q, 16, 0+32+32, 16, 16, 0, 0, 16, 16);
+  en3l2= new PImage(16, 16, ARGB);
+  en3l2.copy(q, 16, 16+32+32, 16, 16, 0, 0, 16, 16);
+
+  en3u1= new PImage(16, 16, ARGB);
+  en3u1.copy(q, 32, 0+32+32, 16, 16, 0, 0, 16, 16);
+  en3u2= new PImage(16, 16, ARGB);
+  en3u2.copy(q, 32, 16+32+32, 16, 16, 0, 0, 16, 16);
+
+  en3d1= new PImage(16, 16, ARGB);
+  en3d1.copy(q, 0, 0+32+32, 16, 16, 0, 0, 16, 16);
+  en3d2= new PImage(16, 16, ARGB);
+  en3d2.copy(q, 0, 16+32+32, 16, 16, 0, 0, 16, 16);
+
+  en4r1= new PImage(16, 16, ARGB);    //en4's are the blue ball guy
+  en4r1.copy(q, 48, 0+32+32+32, 16, 16, 0, 0, 16, 16); 
+  en4r2= new PImage(16, 16, ARGB);
+  en4r2.copy(q, 48+64, 16+32+32+16, 16, 16, 0, 0, 16, 16);
+
+  en4l1= new PImage(16, 16, ARGB);
+  en4l1.copy(q, 16, 0+32+32+32, 16, 16, 0, 0, 16, 16);
+  en4l2= new PImage(16, 16, ARGB);
+  en4l2.copy(q, 16+64, 16+32+32+16, 16, 16, 0, 0, 16, 16);
+
+  en4u1= new PImage(16, 16, ARGB);
+  en4u1.copy(q, 32, 0+32+32+32, 16, 16, 0, 0, 16, 16);
+  en4u2= new PImage(16, 16, ARGB);
+  en4u2.copy(q, 32+64, 16+32+32+16, 16, 16, 0, 0, 16, 16);
+
+  en4d1= new PImage(16, 16, ARGB);
+  en4d1.copy(q, 0, 0+32+32+32, 16, 16, 0, 0, 16, 16);
+  en4d2= new PImage(16, 16, ARGB);
+  en4d2.copy(q, 0+64, 16+32+32+16, 16, 16, 0, 0, 16, 16);
+
+
 
   //items
   heartfull= new PImage(16, 16, ARGB);
