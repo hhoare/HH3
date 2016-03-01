@@ -12,12 +12,7 @@ void addCurley(String s) {
 
 
 void mousePressed() {     //this is just to test the new map loading
-  loadLevelFromText("store.txt");    //change to STOREMAP to load the store
-  coins=500;
-  frogX = 32*6;
-  frogY = 32*16;
-  cameraX = 0;
-  cameraY = 0;
+
 
 //draw heart inside black area. have it so that you need to press 'b' to buy the thing you're standing in front of
 

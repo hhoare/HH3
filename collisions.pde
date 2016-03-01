@@ -30,10 +30,11 @@ void drawHealth() {
   }
 }
 
-
+int coincolor=0;
 void drawCoins() {
   image(grRupee, 540, 420, 32, 32);
-  fill(0);
+  fill(coincolor);
+  stroke(20);
   textSize(20);
   text("x", 565, 440);
   textSize(25);

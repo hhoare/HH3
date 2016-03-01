@@ -23,6 +23,7 @@ int type=8;
 
 
 
+int mapVar = 1;
 
 
 
@@ -114,14 +115,39 @@ void draw() {
       drops.get(i).update();
     }
 
+    drawHealth();
+    drawCoins();
 
     fill(0);
     textSize(30);
     text(gx, 500, 100);
     text(gy, 500, 150);
 
-    drawHealth();
-    drawCoins();
+    if (mapVar == 1 &&  gx == 52 && gy == 37) {
+      mapVar = 2;
+      loadLevelFromText("store.txt");    //change to store.txt to load the store
+      coincolor=255;
+      frogX = 32*6;
+      frogY = 32*16;
+      bordersAndCamera();
+      u=0;
+      d=0;
+      r=0;
+      l=0;
+    }
+    if (mapVar == 2 && gx == 6 && gy ==17 ) {
+      mapVar = 1;
+      loadLevelFromText("OVERWORLD.txt"); 
+      frogX = 52*32;
+      frogY = 38*32;
+      bordersAndCamera();
+      coincolor=0;
+      u=0;
+      d=0;
+      r=0;
+      l=0;
+      image(heartfull, 200, 200, 32, 32);
+    }
   }
 
 
