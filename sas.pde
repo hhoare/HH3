@@ -12,17 +12,13 @@ void addCurley(String s) {
 
 
 void mousePressed() {     //this is just to test the new map loading
-  page=1;
-
-  mapData = store;
-  mapWidth = mapData[0].length*32;
-  mapHeight = mapData.length*32;
-  frogX = 32*3;
-  frogY = 32*2;
+  loadLevelFromText("store.txt");    //change to STOREMAP to load the store
+  frogX = 32*6;
+  frogY = 32*16;
   cameraX = 0;
   cameraY = 0;
-  
 
+//draw heart inside black area. 
 
   //println(cameraX);
 }

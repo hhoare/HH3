@@ -1,4 +1,4 @@
-int[] badTiles = {12, 02, 64, 22, 18, 00, 24};  
+int[] badTiles = {12, 02, 64, 22, 18, 00, 24, 58};  
 
 boolean checkDir(int x, int y, int q) {
   int i = 0;
@@ -26,7 +26,7 @@ boolean checkDir(int x, int y, int q) {
     if (q == 4) {
       //println(mapData[y][x + 1]);
       if (x < mapData[0].length-1  && mapData[y][x + 1] == badTiles[i]    ) {
-        
+
         return true;
       }
     }

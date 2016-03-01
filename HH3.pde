@@ -113,8 +113,8 @@ void draw() {
 
     fill(0);
     textSize(30);
-    text(gx, 300, 100);
-    text(gy, 300, 150);
+    text(gx, 500, 100);
+    text(gy, 500, 150);
 
     drawHealth();
     drawCoins();
