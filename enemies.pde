@@ -1,4 +1,5 @@
 ArrayList<ENEMY> enemies  = new ArrayList<ENEMY>();
+ArrayList<ENEMY> enemiesD1  = new ArrayList<ENEMY>();
 
 void drawEnemy(int x, int y, int skin ) {
   // red ball guy

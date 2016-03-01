@@ -53,11 +53,16 @@ void setup() {
   frogY = 46*32;
   bordersAndCamera(); //this goes after setting the character position 
   //first area to left
+
+
   enemies.add(new ENEMY(25, 35, 31, 48, 22, 44, 1)); //grid x, grid y, ub, db, lb, rb, skin
   enemies.add(new ENEMY(36, 35, 31, 48, 22, 44, 1));
   enemies.add(new ENEMY(36, 47, 31, 48, 22, 44, 1));
   enemies.add(new ENEMY(25, 47, 31, 48, 22, 44, 1));
   enemies.add(new ENEMY(23, 41, 31, 48, 22, 44, 1));
+
+
+  enemiesD1.add(new ENEMY(23, 41, 31, 48, 22, 44, 1));
 }
 float healthmax = 3;
 float health = healthmax;
@@ -105,10 +110,33 @@ void draw() {
     bordersAndCamera();
     if (dGrid)
       drawGrid();
-    map1();
 
-    for (int i=0; i < enemies.size(); i++) {
-      enemies.get(i).update();
+
+    map1();//draw any map 
+
+
+    if (mapVar == 2) {
+      image(heartfull, 11*32-cameraX, 10*32-cameraY, 32, 32);
+      fill(255);
+      textSize(25);
+      text("500", 12*32-cameraX, 10.75*32-cameraY);
+      text("One more heart", 9*32-cameraX, 9.75*32-cameraY);
+    }
+
+    if (healthcounter%2 == 0) {
+      drawLink();
+    }
+
+    if (mapVar == 1) {                               //OVERWORLD
+      for (int i=0; i < enemies.size(); i++) {
+        enemies.get(i).update();
+      }
+    }
+    
+    if (mapVar == 3) {                               //dungeon 1
+      for (int i=0; i < enemiesD1.size(); i++) {
+        enemiesD1.get(i).update();
+      }
     }
 
     for (int i=0; i < drops.size(); i++) {
@@ -146,7 +174,6 @@ void draw() {
       d=0;
       r=0;
       l=0;
-      image(heartfull, 200, 200, 32, 32);
     }
   }
 
@@ -174,15 +201,6 @@ void map1() {
 
 
   //image(qqq,0,0);
-
-
-
-  if (healthcounter%2 == 0) {
-    drawLink();
-  }
-  if ( gx == 52 && gy == 37) {
-    page = 2;
-  }
 }
 
 
