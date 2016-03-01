@@ -51,7 +51,7 @@ void setup() {
   frogX = 56*32;
   frogY = 42*32;
   bordersAndCamera(); //this goes after setting the character position 
-  enemies.add(new ENEMY(29, 41, 31, 48, 22, 44, 4)); //grid x, grid y, ub, db, lb, rb, skin
+  enemies.add(new ENEMY(29, 41, 31, 48, 22, 44, 7)); //grid x, grid y, ub, db, lb, rb, skin
   enemies.add(new ENEMY(23, 35, 31, 48, 22, 44, 1));
 }
 float healthmax = 3;

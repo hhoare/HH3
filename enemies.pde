@@ -154,6 +154,119 @@ void drawEnemy4(int x, int y, int skin ) {
   }
 }
 
+void drawEnemy5(int x, int y, int skin ) {
+
+  // red dude
+  if (skin == 1) {
+    image(en5u1, x, y, 32, 32);
+    //enhealth = 2;
+  } 
+  if (skin == -1) {
+    image(en5u2, x, y, 32, 32);
+    //enhealth = 2;
+  } 
+  if (skin == 2) {
+    image(en5d1, x, y, 32, 32);
+    //enhealth = 2;
+  } 
+  if (skin == -2) {
+    image(en5d2, x, y, 32, 32);
+    // enhealth = 2;
+  }   
+  if (skin == 3) {
+    image(en5l1, x, y, 32, 32);
+    // enhealth = 2;
+  } 
+  if (skin == -3) {
+    image(en5l2, x, y, 32, 32);
+    // enhealth = 2;
+  }
+  if (skin == 4) {
+    image(en5r1, x, y, 32, 32);
+    // enhealth = 2;
+  } 
+  if (skin == -4) {
+    image(en5r2, x, y, 32, 32);
+    // enhealth = 2;
+  }
+}
+
+
+void drawEnemy6(int x, int y, int skin ) {
+
+  // red dude
+  if (skin == 1) {
+    image(en6u1, x, y, 32, 32);
+    //enhealth = 2;
+  } 
+  if (skin == -1) {
+    image(en6u2, x, y, 32, 32);
+    //enhealth = 2;
+  } 
+  if (skin == 2) {
+    image(en6d1, x, y, 32, 32);
+    //enhealth = 2;
+  } 
+  if (skin == -2) {
+    image(en6d2, x, y, 32, 32);
+    // enhealth = 2;
+  }   
+  if (skin == 3) {
+    image(en6l1, x, y, 32, 32);
+    // enhealth = 2;
+  } 
+  if (skin == -3) {
+    image(en6l2, x, y, 32, 32);
+    // enhealth = 2;
+  }
+  if (skin == 4) {
+    image(en6r1, x, y, 32, 32);
+    // enhealth = 2;
+  } 
+  if (skin == -4) {
+    image(en6r2, x, y, 32, 32);
+    // enhealth = 2;
+  }
+}
+
+
+void drawEnemy7(int x, int y, int skin ) {
+
+  // red dude
+  if (skin == 1) {
+    image(en7u1, x, y, 32, 32);
+    //enhealth = 2;
+  } 
+  if (skin == -1) {
+    image(en7u2, x, y, 32, 32);
+    //enhealth = 2;
+  } 
+  if (skin == 2) {
+    image(en7d1, x, y, 32, 32);
+    //enhealth = 2;
+  } 
+  if (skin == -2) {
+    image(en7d2, x, y, 32, 32);
+    // enhealth = 2;
+  }   
+  if (skin == 3) {
+    image(en7l1, x, y, 32, 32);
+    // enhealth = 2;
+  } 
+  if (skin == -3) {
+    image(en7l2, x, y, 32, 32);
+    // enhealth = 2;
+  }
+  if (skin == 4) {
+    image(en7r1, x, y, 32, 32);
+    // enhealth = 2;
+  } 
+  if (skin == -4) {
+    image(en7r2, x, y, 32, 32);
+    // enhealth = 2;
+  }
+}
+
 
 
 // enemy PImages
@@ -259,18 +372,22 @@ class ENEMY {
 
     this.type = type;
 
-
+    if (type > 0) {
+      enhealth = 1;
+    }
+    /*
     if (type == 1) {
-      enhealth = 1;
-    }
-
-    if (type == 2) {
-      enhealth = 1;                                                           // IT DOESNT WORK IF HEALTH IS MORE THAN 1
-    }
-
-    if (type == 3) {
-      enhealth = 1;
-    }
+     enhealth = 1;
+     }
+     
+     if (type == 2) {
+     enhealth = 1;                                                           // IT DOESNT WORK IF HEALTH IS MORE THAN 1
+     }
+     
+     if (type == 3) {
+     enhealth = 1;
+     }
+     */
   }
 
 
@@ -448,6 +565,15 @@ class ENEMY {
     if (type == 4) {
       drawEnemy4(ex1-cameraX, ey1-cameraY, skin);
     }
+    if (type == 5) {
+      drawEnemy5(ex1-cameraX, ey1-cameraY, skin);
+    }
+    if (type == 6) {
+      drawEnemy6(ex1-cameraX, ey1-cameraY, skin);
+    }
+    if (type == 7) {
+      drawEnemy7(ex1-cameraX, ey1-cameraY, skin);
+    }
   }
 
 
@@ -557,6 +683,66 @@ void loadImages2() {
   en4d1.copy(q, 0, 0+32+32+32, 16, 16, 0, 0, 16, 16);
   en4d2= new PImage(16, 16, ARGB);
   en4d2.copy(q, 0+64, 16+32+32+16, 16, 16, 0, 0, 16, 16);
+
+  en5r1= new PImage(16, 16, ARGB);    //en5's are the blue dude
+  en5r1.copy(q, 48, 0+32+32+48, 16, 16, 0, 0, 16, 16); 
+  en5r2= new PImage(16, 16, ARGB);
+  en5r2.copy(q, 48, 16+32+32+48, 16, 16, 0, 0, 16, 16);
+
+  en5l1= new PImage(16, 16, ARGB);
+  en5l1.copy(q, 16, 0+32+32+48, 16, 16, 0, 0, 16, 16);
+  en5l2= new PImage(16, 16, ARGB);
+  en5l2.copy(q, 16, 16+32+32+48, 16, 16, 0, 0, 16, 16);
+
+  en5u1= new PImage(16, 16, ARGB);
+  en5u1.copy(q, 32, 0+32+32+48, 16, 16, 0, 0, 16, 16);
+  en5u2= new PImage(16, 16, ARGB);
+  en5u2.copy(q, 32, 16+32+32+48, 16, 16, 0, 0, 16, 16);
+
+  en5d1= new PImage(16, 16, ARGB);
+  en5d1.copy(q, 0, 0+32+32+48, 16, 16, 0, 0, 16, 16);
+  en5d2= new PImage(16, 16, ARGB);
+  en5d2.copy(q, 0, 16+32+32+48, 16, 16, 0, 0, 16, 16);
+
+  en6r1= new PImage(16, 16, ARGB);    //en6's are the weird guy
+  en6r1.copy(q, 48, 0+32+32+48+32, 16, 16, 0, 0, 16, 16); 
+  en6r2= new PImage(16, 16, ARGB);
+  en6r2.copy(q, 48, 16+32+32+48+32, 16, 16, 0, 0, 16, 16);
+
+  en6l1= new PImage(16, 16, ARGB);
+  en6l1.copy(q, 16, 0+32+32+48+32, 16, 16, 0, 0, 16, 16);
+  en6l2= new PImage(16, 16, ARGB);
+  en6l2.copy(q, 16, 16+32+32+48+32, 16, 16, 0, 0, 16, 16);
+
+  en6u1= new PImage(16, 16, ARGB);
+  en6u1.copy(q, 32, 0+32+32+48+32, 16, 16, 0, 0, 16, 16);
+  en6u2= new PImage(16, 16, ARGB);
+  en6u2.copy(q, 32, 16+32+32+48+32, 16, 16, 0, 0, 16, 16);
+
+  en6d1= new PImage(16, 16, ARGB);
+  en6d1.copy(q, 0, 0+32+32+48+32, 16, 16, 0, 0, 16, 16);
+  en6d2= new PImage(16, 16, ARGB);
+  en6d2.copy(q, 0, 16+32+32+48+32, 16, 16, 0, 0, 16, 16);
+
+  en7r1= new PImage(16, 16, ARGB);    //en7's are the blue knight
+  en7r1.copy(q, 48, 0+32+32+48+32+32, 16, 16, 0, 0, 16, 16); 
+  en7r2= new PImage(16, 16, ARGB);
+  en7r2.copy(q, 48, 16+32+32+48+32+32, 16, 16, 0, 0, 16, 16);
+
+  en7l1= new PImage(16, 16, ARGB);
+  en7l1.copy(q, 16, 0+32+32+48+32+32, 16, 16, 0, 0, 16, 16);
+  en7l2= new PImage(16, 16, ARGB);
+  en7l2.copy(q, 16, 16+32+32+48+32+32, 16, 16, 0, 0, 16, 16);
+
+  en7u1= new PImage(16, 16, ARGB);
+  en7u1.copy(q, 32, 0+32+32+48+32+32, 16, 16, 0, 0, 16, 16);
+  en7u2= new PImage(16, 16, ARGB);
+  en7u2.copy(q, 32, 16+32+32+48+32+32, 16, 16, 0, 0, 16, 16);
+
+  en7d1= new PImage(16, 16, ARGB);
+  en7d1.copy(q, 0, 0+32+32+48+32+32, 16, 16, 0, 0, 16, 16);
+  en7d2= new PImage(16, 16, ARGB);
+  en7d2.copy(q, 0, 16+32+32+48+32+32, 16, 16, 0, 0, 16, 16);
 
 
 
