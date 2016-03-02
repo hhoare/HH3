@@ -116,11 +116,13 @@ void draw() {
 
 
     if (mapVar == 2) {
-      image(heartfull, 11*32-cameraX, 10*32-cameraY, 32, 32);
+     // coins=1000;
+      image(heartfull, 11*32-cameraX, 8*32-cameraY, 32, 32);
       fill(255);
       textSize(25);
-      text("500", 12*32-cameraX, 10.75*32-cameraY);
+      text("500", 10.5*32-cameraX, 10.75*32-cameraY);
       text("One more heart", 9*32-cameraX, 9.75*32-cameraY);
+      image(grRupee, 12*32-cameraX, 10*32-cameraY, 32, 32);
     }
 
     if (healthcounter%2 == 0) {
@@ -132,7 +134,7 @@ void draw() {
         enemies.get(i).update();
       }
     }
-    
+
     if (mapVar == 3) {                               //dungeon 1
       for (int i=0; i < enemiesD1.size(); i++) {
         enemiesD1.get(i).update();
@@ -304,7 +306,11 @@ void keyPressed1() {
 
   //  println(mapData[gy][gx + 1]  +  "  " + moveRight);
 
-
+  if ( mapVar==2 && (key == 'b' || key == 'B') && (gx == 11 || gx == 9 || gx == 13) && gy == 12 && coins>=500) {
+    coins-=500;
+    healthmax+=1;
+    health=healthmax;
+  }
 
 
   if (key == 'g')

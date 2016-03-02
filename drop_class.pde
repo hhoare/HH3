@@ -66,4 +66,4 @@ class DROPS {
   }
 }
 
-int coins= 000;
+int coins= 1000;

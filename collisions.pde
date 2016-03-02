@@ -38,7 +38,7 @@ void drawCoins() {
   textSize(20);
   text("x", 565, 440);
   textSize(25);
-  text(coins, 580, 443);
+  text(coins, 575, 443);
 }
 
 
