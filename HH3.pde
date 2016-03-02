@@ -1,4 +1,4 @@
-int page = 1;
+int page = 0;
 
 int frogX = 32*5;
 int frogY = 32*8;
@@ -23,7 +23,7 @@ int type=8;
 
 
 
-int mapVar = 1;
+int mapVar;
 
 
 
@@ -34,7 +34,7 @@ void setup() {
   frameRate(30);
   noStroke();
 
-   //addCurley("dungeon1numbers.txt");
+  //addCurley("dungeon1numbers.txt");
 
   loadImages();
   loadImages2(); // enemies
@@ -46,13 +46,13 @@ void setup() {
   //mapWidth = mapData[0].length*32;
   //mapHeight = mapData.length*32;
 
-if (page==1){
-  mapVar=1;
+  //  if (page==1) {
+  // mapVar=1;
   loadLevelFromText("OVERWORLD.txt");    //change to STOREMAP to load the store
   frogX = 56*32;
   frogY = 46*32;
-  bordersAndCamera(); //this goes after setting the character position 
-}
+  bordersAndCamera(); //this goes after setting the character position
+  //  }
   enemies.add(new ENEMY(25, 35, 31, 48, 22, 44, 1)); //grid x, grid y, ub, db, lb, rb, skin
   enemies.add(new ENEMY(36, 35, 31, 48, 22, 44, 1));
   enemies.add(new ENEMY(36, 47, 31, 48, 22, 44, 1));
@@ -90,15 +90,30 @@ void draw() {
   //  println(linkSwordFix);
   if (page==0) {
     mapVar=0;
-    background(260,207,203);
+    background(260, 207, 203);
     //noStroke();
     image(title, 0, 0, 320*2, 240*2);
+    keyPressed1();
+    frogX = 56*32;
+    frogY = 46*32;
+    bordersAndCamera();
   }
 
   if (page > 0) {
 
-    if (page == 1) {
+    if (page == 1 && mapVar==1) {
       background(-206680);
+      mapVar = 1;
+      loadLevelFromText("OVERWORLD.txt"); 
+      frogX = 56*32;
+      frogY = 46*32;
+      bordersAndCamera();
+      coincolor=0;
+      u=0;
+      d=0;
+      r=0;
+      l=0;
+      println("yeah");
     }
 
 
@@ -163,7 +178,7 @@ void draw() {
     text(gx, 500, 100);
     text(gy, 500, 150);
     fill(255);
-    text(types,500,200);
+    text(types, 500, 200);
 
     if (mapVar == 1 &&  gx == 52 && gy == 37) {
       mapVar = 2;
@@ -298,17 +313,6 @@ int newFix = 0;
 
 void keyPressed1() {
 
-
-
-
-
-  // print("part1" );
-
-
-
-
-
-
   boolean moveRight = checkDir(gx, gy, 4);
   boolean  moveLeft = checkDir(gx, gy, 3);
   boolean moveUp =   checkDir(gx, gy, 1);
@@ -323,11 +327,10 @@ void keyPressed1() {
     healthmax+=1;
     health=healthmax;
   }
-  
-  if ( page==0 && key == ENTER){
-  page=1;
-  mapVar=1;
-  
+
+  if ( page==0 && key == ENTER) {
+    page=1;
+    mapVar=1;
   }
 
 
