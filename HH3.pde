@@ -52,14 +52,22 @@ void setup() {
   frogX = 56*32;
   frogY = 46*32;
   bordersAndCamera(); //this goes after setting the character position 
-  //first area to left
-
 
   enemies.add(new ENEMY(25, 35, 31, 48, 22, 44, 1)); //grid x, grid y, ub, db, lb, rb, skin
   enemies.add(new ENEMY(36, 35, 31, 48, 22, 44, 1));
   enemies.add(new ENEMY(36, 47, 31, 48, 22, 44, 1));
   enemies.add(new ENEMY(25, 47, 31, 48, 22, 44, 1));
   enemies.add(new ENEMY(23, 41, 31, 48, 22, 44, 1));
+
+  enemies.add(new ENEMY(77, 38, 36, 48, 70, 87, 1));
+  enemies.add(new ENEMY(82, 41, 36, 48, 70, 87, 1));
+  enemies.add(new ENEMY(77, 45, 36, 48, 70, 87, 1));
+
+  enemies.add(new ENEMY(93, 42, 36, 48, 88, 93, 1));
+  enemies.add(new ENEMY(105, 42, 36, 48, 100, 106, 1));
+
+  enemies.add(new ENEMY(113, 46, 36, 48, 109, 118, 1));
+
 
 
   enemiesD1.add(new ENEMY(23, 41, 31, 48, 22, 44, 1));
@@ -116,7 +124,7 @@ void draw() {
 
 
     if (mapVar == 2) {
-     // coins=1000;
+      // coins=1000;
       image(heartfull, 11*32-cameraX, 8*32-cameraY, 32, 32);
       fill(255);
       textSize(25);
