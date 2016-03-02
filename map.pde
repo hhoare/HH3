@@ -146,7 +146,7 @@ void fixImage(PImage q) {
 PImage qqq; 
 
 void loadImages() {
-  PImage q = loadImage("data/maptiles.png");
+  PImage q = loadImage("data/hhmaptiles.png");
   for (int r = 0; r < mt.length; r++) {
     mt[r] = new PImage(16, 16);
     mt[r].copy(q, 1+17*(r%18), 1 + 17*(r/18), 16, 16, 0, 0, 16, 16);   //this loads sprite sheet
@@ -154,7 +154,7 @@ void loadImages() {
 
   // println(mt[2].pixels[0]); //give number value of tile type in top left corner
 
-  q= loadImage("data/link.png");
+  q= loadImage("data/hhlink.png");
 
 
 

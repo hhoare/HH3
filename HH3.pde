@@ -34,7 +34,7 @@ void setup() {
   frameRate(30);
   noStroke();
 
-  // addCurley("overWorldx.txt");
+   //addCurley("dungeon1numbers.txt");
 
   loadImages();
   loadImages2(); // enemies
@@ -46,13 +46,13 @@ void setup() {
   //mapWidth = mapData[0].length*32;
   //mapHeight = mapData.length*32;
 
-
-
+if (page==1){
+  mapVar=1;
   loadLevelFromText("OVERWORLD.txt");    //change to STOREMAP to load the store
   frogX = 56*32;
   frogY = 46*32;
   bordersAndCamera(); //this goes after setting the character position 
-
+}
   enemies.add(new ENEMY(25, 35, 31, 48, 22, 44, 1)); //grid x, grid y, ub, db, lb, rb, skin
   enemies.add(new ENEMY(36, 35, 31, 48, 22, 44, 1));
   enemies.add(new ENEMY(36, 47, 31, 48, 22, 44, 1));
@@ -89,8 +89,10 @@ void draw() {
   // println(uFix + " " +u + " " + keyPressed + "    " + random(1));
   //  println(linkSwordFix);
   if (page==0) {
-    noStroke();
-    image(title, 0, 0, 296, 164);
+    mapVar=0;
+    background(260,207,203);
+    //noStroke();
+    image(title, 0, 0, 320*2, 240*2);
   }
 
   if (page > 0) {
@@ -160,6 +162,8 @@ void draw() {
     textSize(30);
     text(gx, 500, 100);
     text(gy, 500, 150);
+    fill(255);
+    text(types,500,200);
 
     if (mapVar == 1 &&  gx == 52 && gy == 37) {
       mapVar = 2;
@@ -318,6 +322,12 @@ void keyPressed1() {
     coins-=500;
     healthmax+=1;
     health=healthmax;
+  }
+  
+  if ( page==0 && key == ENTER){
+  page=1;
+  mapVar=1;
+  
   }
 
 

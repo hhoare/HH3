@@ -373,22 +373,21 @@ class ENEMY {
 
     this.type = type;
 
-    if (type > 0) {
+    //   if (type > 0) {
+    //    enhealth = 1;
+    // }
+
+    if (type == 1) {
       enhealth = 1;
     }
-    /*
-    if (type == 1) {
-     enhealth = 1;
-     }
-     
-     if (type == 2) {
-     enhealth = 1;                                                           // IT DOESNT WORK IF HEALTH IS MORE THAN 1
-     }
-     
-     if (type == 3) {
-     enhealth = 1;
-     }
-     */
+
+    if (type == 2) {
+      enhealth = 6;                                                           // IT DOESNT WORK IF HEALTH IS MORE THAN 1
+    }
+
+    if (type == 3) {
+      enhealth = 1;
+    }
   }
 
 
@@ -519,15 +518,21 @@ class ENEMY {
     //collision with sword
     //collision with link
 
-    if (dist(ex1+16, ey1+16, frogX+16, frogY+16)  < 26) { // enemy hits you
+    if (dist(ex1+16, ey1+16, frogX+16, frogY+16)  < 20) { // enemy hits you
 
       // println(types);
 
       ouch();
     }
 
+
+    //fill(#0000FF, 150);
+    //ellipse(frogX+14-cameraX, frogY-20- cameraY, 16, 16); // up
+    //ellipse(frogX+18-cameraX, frogY+48- cameraY, 16, 16); //down
+    //ellipse(frogX-20-cameraX, frogY+16- cameraY, 16, 16); //left
+    ///ellipse(frogX+48-cameraX, frogY+16- cameraY, 16, 16);  //right
     //below is sword hits enemy 
-    if ((types == 8 &&  dist(ex1+16, ey1+16, frogX+18, frogY+16) < 26)  ||  (types == 6 &&  dist(ex1+16, ey1+16, frogX+18, frogY+48)  < 26) ||  (types == 7 &&  dist(ex1+16, ey1+16, frogX-20, frogY+16)  < 26) ||  (types == 5 &&  dist(ex1+16, egy1+16, frogX+14, frogY-20) < 26)  )    // FIX THIS, REDRAW THE CIRCLES AND SHIT
+    if ((types == 8 &&  dist(ex1+16, ey1+16, frogX+48, frogY+16) < 26)  ||  (types == 6 &&  dist(ex1+16, ey1+16, frogX+18, frogY+48)  < 26) ||  (types == 7 &&  dist(ex1+16, ey1+16, frogX-20, frogY+16)  < 26) ||  (types == 5 &&  dist(ex1+16, ey1+16, frogX+14, frogY-20) < 26)  )    // FIX THIS, REDRAW THE CIRCLES AND SHIT
     {
       //   println("yes");
 
@@ -584,7 +589,8 @@ class ENEMY {
     stopMe = 1;
     enhealth-=1;
     types-=4;
-  //  println("yes");
+    println("yes");
+    keyReleased();
   }
 }
 
@@ -601,7 +607,11 @@ PImage title;
 
 
 void loadImages2() {
-  PImage q = loadImage("data/enemies_items_chars.png");
+  PImage q = loadImage("data/hhtitle.png");
+  title= new PImage(255, 239, ARGB);
+  title.copy(q, 0, 0, 255, 239, 0, 0, 255, 239);
+
+  q = loadImage("data/hhenemies_items_chars.png");
 
   en1r1= new PImage(16, 16, ARGB);    //en1's are the red ball guy
   en1r1.copy(q, 48, 0, 16, 16, 0, 0, 16, 16); 
@@ -761,11 +771,6 @@ void loadImages2() {
   goldRupee.copy(q, 48, 208, 16, 16, 0, 0, 16, 16);
   potion= new PImage(16, 16, ARGB);
   potion.copy(q, 16*6, 208, 16, 16, 0, 0, 16, 16);
-
-  q = loadImage("data/zeldatitlescreen.png");
-  //title screen
-  title= new PImage(296, 164, ARGB);
-  title.copy(q, 0, 200, 296, 164, 0, 0, 592, 328);
 }
 
 //items and chars pimages

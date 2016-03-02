@@ -3,7 +3,7 @@
 
 void loadLevelFromText(String s) {
   //s is the name of the text file
-  String[] q = loadStrings("data/" + s);
+  String[] q = loadStrings("data/hh" + s);
 
 
 
@@ -23,4 +23,3 @@ void loadLevelFromText(String s) {
   mapWidth = mapData[0].length*32;
   mapHeight = mapData.length*32;
 }
-
