@@ -20,9 +20,9 @@ void gamePlay() {
   
   if (keyPressed) {
     keyPressed1();
-  } else if (uFix == 1 || dFix == 1 | lFix == 1 || rFix == 1) {
+  }//} else if (uFix == 1 || dFix == 1 | lFix == 1 || rFix == 1) {
  //   keyPressed2();
-  }
+ /// }
 
   moveFrog();
   bordersAndCamera();
@@ -120,6 +120,10 @@ void drawTitle() {
   mapVar=0;
   background(260, 207, 203);
   image(title, 0, 0, 320*2, 240*2);
+  fill(0);
+  textSize(50);
+  text("The Legend of \n ZELDA",200,200);
+  
   keyPressed1();
 }
 

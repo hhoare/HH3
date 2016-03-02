@@ -69,8 +69,6 @@ void draw() {
     gamePlay();
   }
 
-
-
 }
 
 
