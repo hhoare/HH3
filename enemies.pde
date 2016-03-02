@@ -392,8 +392,8 @@ class ENEMY {
 
 
   void update() {
-    egx1=(ex1+16)/32;
-    egy1=(ey1+16)/32;
+    egx1=(int)((ex1+16)/32);
+    egy1=(int)((ey1+16)/32);
 
 
     if (stopMe > 0) {
@@ -589,7 +589,7 @@ class ENEMY {
     stopMe = 1;
     enhealth-=1;
     types-=4;
-    println("yes");
+    //  println("yes");
     keyReleased();
   }
 }
@@ -606,9 +606,11 @@ PImage title;
 
 
 
+
+
 void loadImages2() {
   PImage q = loadImage("data/hhtitle.png");
-  title= new PImage(255, 239, ARGB);
+  title= new PImage(255, 239);
   title.copy(q, 0, 0, 255, 239, 0, 0, 255, 239);
 
   q = loadImage("data/hhenemies_items_chars.png");

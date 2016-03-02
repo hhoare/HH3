@@ -41,8 +41,8 @@ class DROPS {
   }
 
   void update() {
-    igx=(ix+16)/32;
-    igy=(iy+16)/32;
+    igx=(int) ((ix+16)/32);
+    igy=(int)((iy+16)/32);
 
 
     drawItems(ix-cameraX, iy-cameraY, itypes);

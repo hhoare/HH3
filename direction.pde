@@ -1,6 +1,7 @@
 int[] badTiles = {12, 02, 64, 22, 18, 00, 24, 58};  
 
 boolean checkDir(int x, int y, int q) {
+ // println("hi");
   int i = 0;
 
   while (i < badTiles.length) {
