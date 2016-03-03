@@ -144,7 +144,7 @@ void map1() {
     }
   }
 }
-
+//Pfont titlefont = createFont("lucidahandwriting.ttf",32);
 
 void drawTitle() {
   mapVar=0;
@@ -152,9 +152,13 @@ void drawTitle() {
   image(title, 0, 0, 320*2, 240*2);
   fill(0);
   textSize(50);
-  text("The Legend of \n ZELDA", 200, 200);
-
-
+  // textFont(titlefont, 32);
+  text("LINK'S", 250, 150);
+  text("STORY", 245, 210);
+  //stroke(80);
+  textSize(20);
+  text("PRESS SPACE TO BEGIN",210,300);
+ // text(
 }
 
 void loadLinkSprites() {
@@ -256,4 +260,3 @@ void loadLevelFromText(String s) {
   mapWidth = mapData[0].length*32;
   mapHeight = mapData.length*32;
 }
-
