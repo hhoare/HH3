@@ -15,14 +15,44 @@ void gamePlay() {
 
   gx = (int)((frogX+16)/32);
   gy = (int)((frogY+16)/32);
-  
-  
-  
-  if (keyPressed) {
-    keyPressed1();
-  }//} else if (uFix == 1 || dFix == 1 | lFix == 1 || rFix == 1) {
- //   keyPressed2();
- /// }
+
+
+  if (goUp == 1) {
+
+    if (u == 0 && checkDir(gx, gy, 1)) {
+      u = 1;
+      types=1;
+    }
+  } else if (goDown == 1) {
+
+    if (d == 0 && checkDir(gx, gy, 2)) {
+      d = 1;
+      types =2;
+    }
+  } else if (goLeft== 1) {
+    if (l == 0 && checkDir(gx, gy, 3)) {
+      l = 1;
+      types =3;
+    }
+  } else if (goRight== 1) {
+    if (r == 0 && checkDir(gx, gy, 4)) {
+      r = 1;
+      types =4;
+    }
+  }
+
+
+
+
+
+
+
+
+  //if (keyPressed) {
+  // keyPressed1();
+  // }//} else if (uFix == 1 || dFix == 1 | lFix == 1 || rFix == 1) {
+  //   keyPressed2();
+  /// }
 
   moveFrog();
   bordersAndCamera();
@@ -50,18 +80,18 @@ void gamePlay() {
   }
 
   if (mapVar == 1) {                               //OVERWORLD
-    for (int i=0; i < enemies.size(); i++) {
+    for (int i=0; i < enemies.size (); i++) {
       enemies.get(i).update();
     }
   }
 
   if (mapVar == 3) {                               //dungeon 1
-    for (int i=0; i < enemiesD1.size(); i++) {
+    for (int i=0; i < enemiesD1.size (); i++) {
       enemiesD1.get(i).update();
     }
   }
 
-  for (int i=0; i < drops.size(); i++) {
+  for (int i=0; i < drops.size (); i++) {
     drops.get(i).update();
   }
 
@@ -122,9 +152,9 @@ void drawTitle() {
   image(title, 0, 0, 320*2, 240*2);
   fill(0);
   textSize(50);
-  text("The Legend of \n ZELDA",200,200);
-  
-  keyPressed1();
+  text("The Legend of \n ZELDA", 200, 200);
+
+
 }
 
 void loadLinkSprites() {
@@ -133,11 +163,11 @@ void loadLinkSprites() {
     mt[r] = new PImage(16, 16);
     mt[r].copy(q, 1+17* ((int)(r%18)), 1 + 17* ((int)(r/18)), 16, 16, 0, 0, 16, 16);   //this loads sprite sheet
   }
-  
-  
-  
-  
-  
+
+
+
+
+
 
   q= loadImage("data/hhlink.png");
 
@@ -226,3 +256,4 @@ void loadLevelFromText(String s) {
   mapWidth = mapData[0].length*32;
   mapHeight = mapData.length*32;
 }
+

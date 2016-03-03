@@ -68,7 +68,6 @@ void draw() {
   } else if (page == 1) {
     gamePlay();
   }
-
 }
 
 
@@ -144,13 +143,11 @@ void mouseReleased() {
 
 
 
-int uFix = 0, dFix= 0, lFix = 0, rFix=0;
 
+//OK LOL
+int goUp, goDown, goLeft, goRight;
+void keyPressed() {
 
-int newFix = 0;
-
-
-void keyPressed1() {
 
   if (page==0) {
 
@@ -164,262 +161,53 @@ void keyPressed1() {
     }
   } else {
 
-
-    boolean moveRight = checkDir(gx, gy, 4);
-    boolean moveLeft = checkDir(gx, gy, 3);
-    boolean moveUp =   checkDir(gx, gy, 1);
-    boolean moveDown = checkDir(gx, gy, 2);
-    
-    boolean canMove = ( u == 0 && d == 0 && l == 0 && r == 0);
+    if ((key == 'z' || key == 'Z') && types<=4 ) {
+      types+=4;
+    }
 
 
 
-    if ( mapVar==2 && (key == 'b' || key == 'B') && (gx == 11 || gx == 9 || gx == 13) && gy == 12 && coins>=500) {
-      coins-=500;
-      healthmax+=1;
-      health=healthmax;
+    if (key == 'w') {
+      goUp = 1;
+    }
+
+    if (key == 's') {
+      goDown = 1;
+    }
+
+    if (key == 'a') {
+      goLeft = 1;
+    }
+    if (key == 'd') {
+      goRight = 1;
     }
 
     if (key == 'g')
       dGrid = !dGrid;
-
-    if (((key == 'w' || keyCode == UP) ) && (canMove && moveUp)) {
-      if (lFix == 1) {
-        lFix = 2;
-      }
-
-      if (rFix == 1) {
-        rFix = 2;
-      }
-      u = 1;
-      types=1;
-      uFix = 1;
-      newFix = 1;
-    }
-
-
-
-    if (((key == 's' || keyCode == DOWN) )  && (canMove && moveDown)) {
-      if (lFix == 1) {
-        lFix = 2;
-      }
-
-      if (rFix == 1) {
-        rFix = 2;
-      }
-      d = 1;
-      types =2;
-      dFix = 1;
-      newFix = 2;
-    }
-
-
-    if (((key == 'a' || keyCode == LEFT)  ) && (canMove  && moveLeft)) {
-      if (uFix == 1) {
-        uFix = 2;
-      }
-
-      if (dFix == 1) {
-        dFix = 2;
-      }
-      l = 1;
-      types=3;
-      lFix = 1;
-      newFix = 3;
-    }
-
-
-
-
-    if (((key == 'd' || keyCode == RIGHT) ) && (canMove  && moveRight)) {
-      if (uFix == 1) {
-        uFix = 2;
-      }
-
-      if (dFix == 1) {
-        dFix = 2;
-      }
-      r = 1;
-      types=4;
-      rFix = 1;
-      newFix = 4;
-    }
-
-    if ((key == 'z' || key == 'Z') && types<=4 ) {
-      types+=4;
-      linkSwordFix = 1;
-    }
   }
 }
-
-
-
-
-
-void keyPressed2() {
-
-
-
-
-
-
-
-
-
-
-
-
-
-  //2  137  131  18  34 0 22 94
-
-  boolean moveRight = checkDir(gx, gy, 4);
-  boolean  moveLeft = checkDir(gx, gy, 3);
-  boolean moveUp =   checkDir(gx, gy, 1);
-  boolean moveDown = checkDir(gx, gy, 2);
-
-
-
-
-
-  //  println(mapData[gy][gx + 1]  +  "  " + moveRight);
-
-
-
-
-  if (key == 'g')
-    dGrid = !dGrid;
-
-  if (( uFix == 1) && ( u == 0 && moveUp)) {
-    if (lFix == 1) {
-      lFix = 2;
-    }
-
-    if (rFix == 1) {
-      rFix = 2;
-    }
-    /// println("goUP" + random(1));
-    u = 1;
-    types=1;
-    uFix = 1;
-    newFix = 1;
-  }
-
-
-
-  if (( dFix == 1)  && (d == 0 && moveDown)) {
-    if (lFix == 1) {
-      lFix = 2;
-    }
-
-    if (rFix == 1) {
-      rFix = 2;
-    }
-    d = 1;
-    types =2;
-    dFix = 1;
-    newFix = 2;
-  }
-
-
-  if (( lFix == 1 ) && (l == 0 && moveLeft)) {
-    if (uFix == 1) {
-      uFix = 2;
-    }
-
-    if (dFix == 1) {
-      dFix = 2;
-    }
-    l = 1;
-    types=3;
-    lFix = 1;
-    newFix = 3;
-  }
-
-
-  if (( rFix == 1) && (r == 0 && moveRight)) {
-    if (uFix == 1) {
-      uFix = 2;
-    }
-
-    if (dFix == 1) {
-      dFix = 2;
-    }
-    r = 1;
-    types=4;
-    rFix = 1;
-    newFix = 4;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-int linkSwordFix = 0;
-
-
 
 void keyReleased() {
 
-  if ((key == 'z' || key == 'Z') && types>4) {
+  if ((key == 'z' || key == 'Z') && types> 4 ) {
     types-=4;
   }
 
 
-
-  if (key == 'w' || keyCode == UP) {
-    uFix = 0;
-
-    if (lFix == 2) {
-      lFix = 1;
-    }
-
-    if (rFix == 2) {
-      rFix = 1;
-    }
+  if (key == 'w') {
+    goUp = 0;
   }
 
-
-  if (key == 's' || keyCode == DOWN) {
-    dFix = 0;
-    if (lFix == 2) {
-      lFix = 1;
-    }
-
-    if (rFix == 2) {
-      rFix = 1;
-    }
+  if (key == 's') {
+    goDown = 0;
   }
 
-
-  if (key == 'a' || keyCode == LEFT) {
-    lFix = 0;
-
-    if (uFix == 2) {
-      uFix = 1;
-    }
-
-    if (dFix == 2) {
-      dFix = 1;
-    }
+  if (key == 'a') {
+    goLeft = 0;
   }
-
-
-  if (key == 'd' || keyCode == RIGHT) {
-    rFix = 0;
-    //  println("D WAS RELEASED");
-
-    if (uFix == 2) {
-      uFix = 1;
-    }
-
-    if (dFix == 2) {
-      dFix = 1;
-    }
+  if (key == 'd') {
+    goRight = 0;
   }
 }
+
+
