@@ -36,7 +36,7 @@ void setup() {
   frameRate(30);
   noStroke();
 
- // addCurley("dungeon3num.txt");
+//  addCurley("map2num.txt");
 
   loadLinkSprites();
   loadImages2(); // enemies
@@ -104,12 +104,15 @@ void bordersAndCamera() {
     cameraX = frogX - 32*8;
   }
   //vertical camera 
-  if (frogY > cameraY + 32*12 && cameraY < (mapHeight - height)) {//ASSUMING FROG VELOCITY = 40
-    cameraY = frogY - 32*12;
+  if (frogY > cameraY + 32*10 && cameraY < (mapHeight - height)) {//ASSUMING FROG VELOCITY = 40
+    cameraY = frogY - 32*10;
   }
   if (frogY < cameraY + 32*8 && cameraY > 0) {//ASSUMING FROG VELOCITY = 40
     cameraY = frogY - 32*8;
   }
+  println(cameraX);
+  
+  
 }
 
 
@@ -157,7 +160,9 @@ void keyPressed() {
       loadLevelFromText("OVERWORLD.txt");    //change to STOREMAP to load the store
       frogX = 56*32;
       frogY = 46*32;
-      bordersAndCamera();
+      cameraY = 1120;
+      cameraX = 1440;
+      //bordersAndCamera();
     }
   } else {
 
