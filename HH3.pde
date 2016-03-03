@@ -167,18 +167,18 @@ void keyPressed() {
 
 
 
-    if (key == 'w') {
+    if (key == 'w' || keyCode == UP) {
       goUp = 1;
     }
 
-    if (key == 's') {
+    if (key == 's'|| keyCode == DOWN) {
       goDown = 1;
     }
 
-    if (key == 'a') {
+    if (key == 'a'|| keyCode == LEFT) {
       goLeft = 1;
     }
-    if (key == 'd') {
+    if (key == 'd'|| keyCode == RIGHT) {
       goRight = 1;
     }
 
@@ -193,21 +193,18 @@ void keyReleased() {
     types-=4;
   }
 
-
-  if (key == 'w') {
+  if (key == 'w' || keyCode == UP) {
     goUp = 0;
   }
 
-  if (key == 's') {
+  if (key == 's'|| keyCode == DOWN) {
     goDown = 0;
   }
 
-  if (key == 'a') {
+  if (key == 'a'|| keyCode == LEFT) {
     goLeft = 0;
   }
-  if (key == 'd') {
+  if (key == 'd'|| keyCode == RIGHT) {
     goRight = 0;
   }
 }
-
-
