@@ -496,17 +496,17 @@ void loadLinkSprites() {
 
 
 void populateArrays() {
-  enemies.add(new ENEMY(25, 35, 31, 48, 22, 44, 1)); //grid x, grid y, ub, db, lb, rb, skin
-  enemies.add(new ENEMY(36, 35, 31, 48, 22, 44, 1));
-  enemies.add(new ENEMY(36, 47, 31, 48, 22, 44, 1));
-  enemies.add(new ENEMY(25, 47, 31, 48, 22, 44, 1));
-  enemies.add(new ENEMY(23, 41, 31, 48, 22, 44, 1));
-  enemies.add(new ENEMY(77, 38, 36, 48, 70, 87, 1));
-  enemies.add(new ENEMY(82, 41, 36, 48, 70, 87, 1));
-  enemies.add(new ENEMY(77, 45, 36, 48, 70, 87, 1));
-  enemies.add(new ENEMY(93, 42, 36, 48, 88, 93, 1));
-  enemies.add(new ENEMY(105, 42, 36, 48, 100, 106, 1));
-  enemies.add(new ENEMY(113, 46, 36, 48, 109, 118, 1));
+  enemies.add(new ENEMY(25, 35, 31, 48, 22, 44, 8)); //grid x, grid y, ub, db, lb, rb, skin
+  enemies.add(new ENEMY(36, 35, 31, 48, 22, 44, 8));
+  enemies.add(new ENEMY(36, 47, 31, 48, 22, 44, 8));
+  enemies.add(new ENEMY(25, 47, 31, 48, 22, 44, 8));
+  enemies.add(new ENEMY(23, 41, 31, 48, 22, 44, 8));
+  enemies.add(new ENEMY(77, 38, 36, 48, 70, 87, 8));
+  enemies.add(new ENEMY(82, 41, 36, 48, 70, 87, 8));
+  enemies.add(new ENEMY(77, 45, 36, 48, 70, 87, 8));
+  enemies.add(new ENEMY(93, 42, 36, 48, 88, 93, 8));
+  enemies.add(new ENEMY(105, 42, 36, 48, 100, 106, 8));
+  enemies.add(new ENEMY(113, 46, 36, 48, 109, 118, 8));
 
   // enemiesD1.add(new ENEMY(23, 41, 31, 48, 22, 44, 1));
 }
