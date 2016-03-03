@@ -142,8 +142,8 @@ void gamePlay() {
       }
       frogX = 52*32;
       frogY = 38*32;
-      bordersAndCamera();
-      coincolor=0;
+      cameraX = 0;//32*2;
+      cameraY = 0;//32*5;
       u=0;
       d=0;
       r=0;
@@ -154,7 +154,8 @@ void gamePlay() {
       loadLevelFromText("d4.txt"); 
       frogX = 18*32;
       frogY = 40*32;
-      bordersAndCamera();
+      cameraX = 0;//32*2;
+      cameraY = 0;//32*5;
       coincolor=0;
       u=0;
       d=0;
@@ -166,7 +167,8 @@ void gamePlay() {
       loadLevelFromText("d2.txt"); 
       frogX = 18*32;
       frogY = 40*32;
-      bordersAndCamera();
+      cameraX = 0;//32*2;
+      cameraY = 0;//32*5;
       coincolor=0;
       u=0;
       d=0;
@@ -178,7 +180,8 @@ void gamePlay() {
       loadLevelFromText("d3.txt"); 
       frogX = 3*32;
       frogY = 40*32;
-      bordersAndCamera();
+      cameraX = 0;//32*2;
+      cameraY = 0;//32*5;
       coincolor=0;
       u=0;
       d=0;
@@ -190,7 +193,8 @@ void gamePlay() {
       loadLevelFromText("d1.txt"); 
       frogX = 23*32;
       frogY = 64*32;
-      bordersAndCamera();
+      cameraX = 0;//32*2;
+      cameraY = 0;//32*5;
       coincolor=0;
       u=0;
       d=0;
@@ -210,7 +214,8 @@ void gamePlay() {
     coincolor=0;
     frogX = 32*22;
     frogY = 32*42;
-    bordersAndCamera();
+    cameraX = 0;//32*2;
+    cameraY = 0;//32*5;
     u=0;
     d=0;
     r=0;
@@ -223,7 +228,8 @@ void gamePlay() {
     coincolor=0;
     frogX = 32*22;
     frogY = 32*42;
-    bordersAndCamera();
+    cameraX = 0;//32*2;
+    cameraY = 0;//32*5;
     u=0;
     d=0;
     r=0;
@@ -236,7 +242,8 @@ void gamePlay() {
     coincolor=0;
     frogX = 32*7;
     frogY = 32*42;
-    bordersAndCamera();
+    cameraX = 0;//32*2;
+    cameraY = 0;//32*5;
     u=0;
     d=0;
     r=0; 
@@ -249,7 +256,8 @@ void gamePlay() {
     coincolor=0;
     frogX = 32*27;
     frogY = 32*67;
-    bordersAndCamera();
+    cameraX = 0;//32*2;
+    cameraY = 0;//32*5;
     u=0;
     d=0;
     r=0;
@@ -262,7 +270,8 @@ void gamePlay() {
     coincolor=255;
     frogX = 32*6;
     frogY = 32*16;
-    bordersAndCamera();
+    cameraX = 0;//32*2;
+    cameraY = 0;//32*5;
     u=0;
     d=0;
     r=0;
@@ -275,7 +284,8 @@ void gamePlay() {
     coincolor=255;
     frogX = 32*6;
     frogY = 32*16;
-    bordersAndCamera();
+    cameraX = 0;//32*2;
+    cameraY = 0;//32*5;
     u=0;
     d=0;
     r=0;
@@ -289,7 +299,8 @@ void gamePlay() {
     coincolor=255;
     frogX = 32*6;
     frogY = 32*16;
-    bordersAndCamera();
+    cameraX = 0;//32*2;
+    cameraY = 0;//32*5;
     u=0;
     d=0;
     r=0;
@@ -301,7 +312,8 @@ void gamePlay() {
     coincolor=255;
     frogX = 32*6;
     frogY = 32*16;
-    bordersAndCamera();
+    cameraX = 0;//32*2;
+    cameraY = 0;//32*5;
     u=0;
     d=0;
     r=0;
@@ -322,7 +334,8 @@ void gamePlay() {
     coincolor=255;
     frogX = 32*116;
     frogY = 32*40;
-    bordersAndCamera();
+    cameraX = 0;//32*2;
+    cameraY = 0;//32*5;
     u=0;
     d=0;
     r=0;
@@ -341,7 +354,8 @@ void gamePlay() {
     coincolor=255;
     frogX = 32*1;
     frogY = 32*48;
-    bordersAndCamera();
+    cameraX = 0;//32*2;
+    cameraY = 0;//32*5;
     u=0;
     d=0;
     r=0;
@@ -360,7 +374,8 @@ void gamePlay() {
     coincolor=255;
     frogX = 32*19;
     frogY = 32*10;
-    bordersAndCamera();
+    cameraX = 0;//32*2;
+    cameraY = 0;//32*5;
     u=0;
     d=0;
     r=0;
@@ -379,13 +394,14 @@ void gamePlay() {
     coincolor=255;
     frogX = 32*108;
     frogY = 32*5;
-    bordersAndCamera();
+    cameraX = 0;//32*2;
+    cameraY = 0;//32*5;
     u=0;
     d=0;
     r=0;
     l=0;
   }
-  
+
   cheapFix++;
 }
 
