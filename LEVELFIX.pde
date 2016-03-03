@@ -85,7 +85,7 @@ void gamePlay() {
     }
   }
 
-  if (mapVar == 3) {                               //dungeon 1
+  if (mapVar == 3) {                               //dungeon 1 to the right 
     for (int i=0; i < enemiesD1.size (); i++) {
       enemiesD1.get(i).update();
     }
@@ -129,6 +129,161 @@ void gamePlay() {
     r=0;
     l=0;
   }
+
+  if (mapVar == 1 &&  gx == 116 && gy == 39) {
+    mapVar = 3;
+    loadLevelFromText("d4.txt");    
+    coincolor=0;
+    frogX = 32*22;
+    frogY = 32*42;
+    bordersAndCamera();
+    u=0;
+    d=0;
+    r=0;
+    l=0;
+  }
+  if (mapVar == 1 &&  gx == 2 && gy == 48) {
+    mapVar = 4;
+    loadLevelFromText("d2.txt");    
+    coincolor=0;
+    frogX = 32*22;
+    frogY = 32*42;
+    bordersAndCamera();
+    u=0;
+    d=0;
+    r=0;
+    l=0;
+  }
+  if (mapVar == 1 &&  gx == 19 && gy == 9) {
+    mapVar = 5;
+    loadLevelFromText("d3.txt");    
+    coincolor=0;
+    frogX = 32*7;
+    frogY = 32*42;
+    bordersAndCamera();
+    u=0;
+    d=0;
+    r=0; 
+    l=0;
+  }
+  if (mapVar == 1 &&  (gx == 106 ||gx == 107 ||gx == 108 ||gx == 109) && gy == 4) {   // this is the boss dungeon 
+    mapVar = 6;
+    loadLevelFromText("d1.txt");    
+    coincolor=0;
+    frogX = 32*27;
+    frogY = 32*67;
+    bordersAndCamera();
+    u=0;
+    d=0;
+    r=0;
+    l=0;
+  }
+
+  if (mapVar == 3 &&  gx == 18 && gy == 39) {    
+    mapVar = 2;
+    loadLevelFromText("store.txt");    
+    coincolor=255;
+    frogX = 32*6;
+    frogY = 32*16;
+    bordersAndCamera();
+    u=0;
+    d=0;
+    r=0;
+    l=0;
+  }
+
+  if (mapVar == 5 &&  gx == 3 && gy == 39) {    
+    mapVar = 2;
+    loadLevelFromText("store.txt");    
+    coincolor=255;
+    frogX = 32*6;
+    frogY = 32*16;
+    bordersAndCamera();
+    u=0;
+    d=0;
+    r=0;
+    l=0;
+  }
+
+
+  if (mapVar == 6 &&  gx == 23 && gy == 63) {    
+    mapVar = 2;
+    loadLevelFromText("store.txt");    
+    coincolor=255;
+    frogX = 32*6;
+    frogY = 32*16;
+    bordersAndCamera();
+    u=0;
+    d=0;
+    r=0;
+    l=0;
+  }
+  if (mapVar == 4 &&  gx == 18 && gy == 39) {    
+    mapVar = 2;
+    loadLevelFromText("store.txt");    
+    coincolor=255;
+    frogX = 32*6;
+    frogY = 32*16;
+    bordersAndCamera();
+    u=0;
+    d=0;
+    r=0;
+    l=0;
+  }
+
+  ////////////////////////////////////// DUNGEON EXITS
+
+  if (mapVar == 3 &&  gx == 1 && gy == 11) {    
+    mapVar = 1;
+    loadLevelFromText("OVERWORLD.txt");    
+    coincolor=255;
+    frogX = 32*116;
+    frogY = 32*40;
+    bordersAndCamera();
+    u=0;
+    d=0;
+    r=0;
+    l=0;
+  }
+
+  if (mapVar == 4 &&  gx == 1 && gy == 16) {    
+    mapVar = 1;
+    loadLevelFromText("OVERWORLD.txt");    
+    coincolor=255;
+    frogX = 32*1;
+    frogY = 32*48;
+    bordersAndCamera();
+    u=0;
+    d=0;
+    r=0;
+    l=0;
+  }
+
+  if (mapVar == 5 &&  gx == 19 && gy == 43) {    
+    mapVar = 1;
+    loadLevelFromText("OVERWORLD.txt");    
+    coincolor=255;
+    frogX = 32*19;
+    frogY = 32*10;
+    bordersAndCamera();
+    u=0;
+    d=0;
+    r=0;
+    l=0;
+  }
+  
+    if (mapVar == 6 &&  gx == 1 && gy == 1) {    
+    mapVar = 1;
+    loadLevelFromText("OVERWORLD.txt");    
+    coincolor=255;
+    frogX = 32*108;
+    frogY = 32*5;
+    bordersAndCamera();
+    u=0;
+    d=0;
+    r=0;
+    l=0;
+  }
 }
 
 
@@ -157,8 +312,9 @@ void drawTitle() {
   text("STORY", 245, 210);
   //stroke(80);
   textSize(20);
-  text("PRESS SPACE TO BEGIN",210,300);
- // text(
+  text("PRESS SPACE TO BEGIN", 210, 300);
+  textSize(15);
+  text("By Henry Hoare", 265, 245);
 }
 
 void loadLinkSprites() {
@@ -232,7 +388,8 @@ void populateArrays() {
   enemies.add(new ENEMY(93, 42, 36, 48, 88, 93, 1));
   enemies.add(new ENEMY(105, 42, 36, 48, 100, 106, 1));
   enemies.add(new ENEMY(113, 46, 36, 48, 109, 118, 1));
-  enemiesD1.add(new ENEMY(23, 41, 31, 48, 22, 44, 1));
+
+  // enemiesD1.add(new ENEMY(23, 41, 31, 48, 22, 44, 1));
 }
 
 

@@ -7,7 +7,7 @@ void addCurley(String s) {
     output[i] = "{"+q[i] + "},";
   }
 
-  saveStrings("data/d1.txt", output); //change this to dungeon 1 once i make the dungeon map and save the numbers as a txt
+  saveStrings("data/dun3.txt", output); //change this to dungeon 1 once i make the dungeon map and save the numbers as a txt
 }
 
 

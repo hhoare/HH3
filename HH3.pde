@@ -36,7 +36,7 @@ void setup() {
   frameRate(30);
   noStroke();
 
-  //addCurley("dungeon1numbers.txt");
+ // addCurley("dungeon3num.txt");
 
   loadLinkSprites();
   loadImages2(); // enemies
