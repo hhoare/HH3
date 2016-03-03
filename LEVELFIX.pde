@@ -1,3 +1,9 @@
+int storeVar=1;
+
+
+
+
+
 void gamePlay() {
 
 
@@ -117,21 +123,76 @@ void gamePlay() {
     r=0;
     l=0;
   }
-  if (mapVar == 2 && gx == 6 && gy ==17 ) {
-    mapVar = 1;
-    loadLevelFromText("OVERWORLD.txt"); 
-    frogX = 52*32;
-    frogY = 38*32;
-    bordersAndCamera();
-    coincolor=0;
-    u=0;
-    d=0;
-    r=0;
-    l=0;
+  if (mapVar == 2 && gx == 6 && gy ==17 ) {            /////////////////STORE EXIT
+    if (storeVar==1) {
+      mapVar = 1;
+      loadLevelFromText("OVERWORLD.txt"); 
+      frogX = 52*32;
+      frogY = 38*32;
+      bordersAndCamera();
+      coincolor=0;
+      u=0;
+      d=0;
+      r=0;
+      l=0;
+    }
+    if (storeVar==3) {
+      mapVar = 3;
+      loadLevelFromText("d4.txt"); 
+      frogX = 18*32;
+      frogY = 40*32;
+      bordersAndCamera();
+      coincolor=0;
+      u=0;
+      d=0;
+      r=0;
+      l=0;
+    }
+    if (storeVar==4) {
+      mapVar = 4;
+      loadLevelFromText("d2.txt"); 
+      frogX = 18*32;
+      frogY = 40*32;
+      bordersAndCamera();
+      coincolor=0;
+      u=0;
+      d=0;
+      r=0;
+      l=0;
+    }
+    if (storeVar==5) {
+      mapVar = 5;
+      loadLevelFromText("d3.txt"); 
+      frogX = 3*32;
+      frogY = 40*32;
+      bordersAndCamera();
+      coincolor=0;
+      u=0;
+      d=0;
+      r=0;
+      l=0;
+    }
+    if (storeVar==6) {
+      mapVar = 6;
+      loadLevelFromText("d1.txt"); 
+      frogX = 23*32;
+      frogY = 64*32;
+      bordersAndCamera();
+      coincolor=0;
+      u=0;
+      d=0;
+      r=0;
+      l=0;
+    }
   }
+
+
+
+
 
   if (mapVar == 1 &&  gx == 116 && gy == 39) {
     mapVar = 3;
+    storeVar=3;
     loadLevelFromText("d4.txt");    
     coincolor=0;
     frogX = 32*22;
@@ -144,6 +205,7 @@ void gamePlay() {
   }
   if (mapVar == 1 &&  gx == 2 && gy == 48) {
     mapVar = 4;
+    storeVar=4;
     loadLevelFromText("d2.txt");    
     coincolor=0;
     frogX = 32*22;
@@ -156,6 +218,7 @@ void gamePlay() {
   }
   if (mapVar == 1 &&  gx == 19 && gy == 9) {
     mapVar = 5;
+    storeVar=5;
     loadLevelFromText("d3.txt");    
     coincolor=0;
     frogX = 32*7;
@@ -168,6 +231,7 @@ void gamePlay() {
   }
   if (mapVar == 1 &&  (gx == 106 ||gx == 107 ||gx == 108 ||gx == 109) && gy == 4) {   // this is the boss dungeon 
     mapVar = 6;
+    storeVar=6;
     loadLevelFromText("d1.txt");    
     coincolor=0;
     frogX = 32*27;
@@ -235,6 +299,7 @@ void gamePlay() {
 
   if (mapVar == 3 &&  gx == 1 && gy == 11) {    
     mapVar = 1;
+    storeVar=1;
     loadLevelFromText("OVERWORLD.txt");    
     coincolor=255;
     frogX = 32*116;
@@ -248,6 +313,7 @@ void gamePlay() {
 
   if (mapVar == 4 &&  gx == 1 && gy == 16) {    
     mapVar = 1;
+    storeVar=1;
     loadLevelFromText("OVERWORLD.txt");    
     coincolor=255;
     frogX = 32*1;
@@ -261,6 +327,7 @@ void gamePlay() {
 
   if (mapVar == 5 &&  gx == 19 && gy == 43) {    
     mapVar = 1;
+    storeVar=1;
     loadLevelFromText("OVERWORLD.txt");    
     coincolor=255;
     frogX = 32*19;
@@ -271,9 +338,10 @@ void gamePlay() {
     r=0;
     l=0;
   }
-  
-    if (mapVar == 6 &&  gx == 1 && gy == 1) {    
+
+  if (mapVar == 6 &&  gx == 1 && gy == 1) {    
     mapVar = 1;
+    storeVar=1;
     loadLevelFromText("OVERWORLD.txt");    
     coincolor=255;
     frogX = 32*108;
