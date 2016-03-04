@@ -2,6 +2,10 @@ int storeVar=1;
 
 int completion=0;
 
+int d1;
+int d2;
+int d3;
+
 
 int cheapFix;
 
@@ -86,6 +90,29 @@ void gamePlay() {
   if (healthcounter%2 == 0) {
     drawLink();
   }
+  
+  if (health == 0) {
+   page=1;
+   loadLevelFromText("OVERWORLD.txt");    //change to STOREMAP to load the store
+   completion = 0;
+   d1=0;
+   d2=0;
+   d3=0;
+   healthmax=3;
+   health=healthmax;
+   coins=0;
+   mapVar=1;
+   frogX = 56*32;
+   frogY = 46*32;
+   // cameraY = 1120;
+   // cameraX = 1440;
+   cheapFix=0;
+   u=0;
+   d=0;
+   r=0;
+   l=0;
+   }
+   
 
   if (mapVar == 1 ) {                               //OVERWORLD
     for (int i=0; i < enemies.size (); i++) {
@@ -99,17 +126,17 @@ void gamePlay() {
     }
   }
   if (mapVar == 4) {                               //dungeon 1 to the right 
-    for (int i=0; i < enemiesD1.size (); i++) {
+    for (int i=0; i < enemiesD2.size (); i++) {
       enemiesD2.get(i).update();
     }
   }
   if (mapVar == 5) {                               //dungeon 1 to the right 
-    for (int i=0; i < enemiesD1.size (); i++) {
+    for (int i=0; i < enemiesD3.size (); i++) {
       enemiesD3.get(i).update();
     }
   }
   if (mapVar == 6) {                               //dungeon 1 to the right 
-    for (int i=0; i < enemiesD1.size (); i++) {
+    for (int i=0; i < enemiesD4.size (); i++) {
       enemiesD4.get(i).update();
     }
   }
@@ -152,7 +179,7 @@ void gamePlay() {
   if (mapVar == 2 && gx == 6 && gy ==17 ) {            /////////////////STORE EXIT
     if (storeVar==1) {
       mapVar = 1;
-      if (completion<3) {
+      if ((d1+d2+d3)<3) {
         loadLevelFromText("OVERWORLD.txt");
       } else {
         loadLevelFromText("OVERWORLD2.txt");
@@ -340,10 +367,11 @@ void gamePlay() {
   ////////////////////////////////////// DUNGEON EXITS
 
   if (mapVar == 3 &&  gx == 1 && gy == 11) {    
-    completion++;
+    //completion++;
+    d1=1;
     mapVar = 1;
     storeVar=1;
-    if (completion<3) {
+    if ((d1+d2+d3)<3) {
       loadLevelFromText("OVERWORLD.txt");
     } else {
       loadLevelFromText("OVERWORLD2.txt");
@@ -360,10 +388,11 @@ void gamePlay() {
   }
 
   if (mapVar == 4 &&  gx == 1 && gy == 16) {    
-    completion++;
+    //completion++;
+    d2=1;
     mapVar = 1;
     storeVar=1;
-    if (completion<3) {
+    if ((d1+d2+d3)<3) {
       loadLevelFromText("OVERWORLD.txt");
     } else {
       loadLevelFromText("OVERWORLD2.txt");
@@ -380,10 +409,11 @@ void gamePlay() {
   }
 
   if (mapVar == 5 &&  gx == 19 && gy == 43) {    
-    completion++;
+    //   completion++;
+    d3=1;
     mapVar = 1;
     storeVar=1;
-    if (completion<3) {
+    if ((d1+d2+d3)<3) {
       loadLevelFromText("OVERWORLD.txt");
     } else {
       loadLevelFromText("OVERWORLD2.txt");
@@ -400,10 +430,11 @@ void gamePlay() {
   }
 
   if (mapVar == 6 &&  gx == 1 && gy == 1) {    
-    completion++;
+  //  completion++;
+  
     mapVar = 1;
     storeVar=1;
-    if (completion<3) {
+    if ((d1+d2+d3)<3) {
       loadLevelFromText("OVERWORLD.txt");
     } else {
       loadLevelFromText("OVERWORLD2.txt");
@@ -724,6 +755,223 @@ void populateArrays() {
   enemiesD2.add(new ENEMY(22, 21, 19, 26, 16, 28, 1));
   enemiesD2.add(new ENEMY(25, 23, 19, 26, 16, 28, 1));
   enemiesD2.add(new ENEMY(28, 21, 19, 26, 16, 28, 1));
+
+
+  enemiesD2.add(new ENEMY(22, 13, 10, 17, 16, 28, 1));
+  enemiesD2.add(new ENEMY(17, 13, 10, 17, 16, 28, 1));
+  enemiesD2.add(new ENEMY(27, 14, 10, 17, 16, 28, 1));
+  enemiesD2.add(new ENEMY(22, 10, 10, 17, 16, 28, 1));
+
+  enemiesD2.add(new ENEMY(34, 11, 10, 17, 31, 48, 1));
+  enemiesD2.add(new ENEMY(34, 15, 10, 17, 31, 48, 1));
+  enemiesD2.add(new ENEMY(37, 13, 10, 17, 31, 48, 1));
+  enemiesD2.add(new ENEMY(40, 11, 10, 17, 31, 48, 1));
+  enemiesD2.add(new ENEMY(40, 15, 10, 17, 31, 48, 1));
+
+  enemiesD2.add(new ENEMY(41, 4, 0, 8, 31, 48, 1));
+  enemiesD2.add(new ENEMY(37, 4, 0, 8, 31, 48, 1));
+  enemiesD2.add(new ENEMY(33, 4, 0, 8, 31, 48, 1));
+  enemiesD2.add(new ENEMY(37, 1, 0, 8, 31, 48, 1));
+
+  enemiesD2.add(new ENEMY(1, 1, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(2, 2, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(3, 3, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(4, 4, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(3, 5, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(2, 6, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(1, 7, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(8, 4, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(9, 4, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(10, 4, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(11, 4, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(12, 4, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(13, 4, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(11, 2, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(11, 6, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(18, 1, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(18, 2, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(18, 3, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(18, 4, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(18, 5, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(18, 6, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(18, 7, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(22, 4, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(25, 2, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(25, 6, 0, 8, 0, 29, 1));
+
+  enemiesD2.add(new ENEMY(1, 10, 10, 16, 0, 29, 1));
+  enemiesD2.add(new ENEMY(3, 12, 10, 16, 0, 29, 1));
+  enemiesD2.add(new ENEMY(5, 14, 10, 16, 0, 29, 1));
+  enemiesD2.add(new ENEMY(7, 16, 10, 16, 0, 29, 1));
+  enemiesD2.add(new ENEMY(9, 14, 10, 16, 0, 29, 1));
+  enemiesD2.add(new ENEMY(1, 12, 10, 16, 0, 29, 1));
+  enemiesD2.add(new ENEMY(1, 10, 10, 16, 0, 29, 1));
+
+  enemiesD3.add(new ENEMY(3, 31, 28, 35, 0, 13, 1));
+  enemiesD3.add(new ENEMY(7, 31, 28, 35, 0, 13, 1));
+  enemiesD3.add(new ENEMY(11, 31, 28, 35, 0, 13, 1));
+  enemiesD3.add(new ENEMY(7, 28, 28, 35, 0, 13, 1));
+
+  enemiesD3.add(new ENEMY(4, 20, 19, 26, 0, 13, 1));
+  enemiesD3.add(new ENEMY(5, 23, 19, 26, 0, 13, 1));
+  enemiesD3.add(new ENEMY(6, 23, 19, 26, 0, 13, 1));
+  enemiesD3.add(new ENEMY(7, 23, 19, 26, 0, 13, 1));
+  enemiesD3.add(new ENEMY(8, 23, 19, 26, 0, 13, 1));
+  enemiesD3.add(new ENEMY(9, 23, 19, 26, 0, 13, 1));
+  enemiesD3.add(new ENEMY(10, 20, 19, 26, 0, 13, 1));
+
+  enemiesD3.add(new ENEMY(3, 16, 10, 17, 0, 13, 1));
+  enemiesD3.add(new ENEMY(4, 13, 10, 17, 0, 13, 1));
+  enemiesD3.add(new ENEMY(7, 14, 10, 17, 0, 13, 1));
+  enemiesD3.add(new ENEMY(10, 13, 10, 17, 0, 13, 1));
+  enemiesD3.add(new ENEMY(11, 16, 10, 17, 0, 13, 1));
+
+  enemiesD3.add(new ENEMY(3, 3, 1, 8, 0, 13, 1));
+  enemiesD3.add(new ENEMY(4, 7, 1, 8, 0, 13, 1));
+  enemiesD3.add(new ENEMY(10, 7, 1, 8, 0, 13, 1));
+  enemiesD3.add(new ENEMY(7, 5, 1, 8, 0, 13, 1));
+  enemiesD3.add(new ENEMY(7, 2, 1, 8, 0, 13, 1));
+  enemiesD3.add(new ENEMY(11, 3, 1, 8, 0, 13, 1));
+
+  enemiesD3.add(new ENEMY(19, 2, 1, 8, 16, 28, 1));
+  enemiesD3.add(new ENEMY(19, 6, 1, 8, 16, 28, 1));
+  enemiesD3.add(new ENEMY(22, 3, 1, 8, 16, 28, 1));
+  enemiesD3.add(new ENEMY(25, 2, 1, 8, 16, 28, 1));
+  enemiesD3.add(new ENEMY(25, 6, 1, 8, 16, 28, 1));
+
+  enemiesD3.add(new ENEMY(22, 11, 10, 17, 16, 28, 1));
+  enemiesD3.add(new ENEMY(19, 12, 10, 17, 16, 28, 1));
+  enemiesD3.add(new ENEMY(18, 15, 10, 17, 16, 28, 1));
+  enemiesD3.add(new ENEMY(25, 12, 10, 17, 16, 28, 1));
+  enemiesD3.add(new ENEMY(26, 15, 10, 17, 16, 28, 1));
+
+  enemiesD3.add(new ENEMY(17, 23, 19, 26, 16, 28, 1));
+  enemiesD3.add(new ENEMY(19, 20, 19, 26, 16, 28, 1));
+  enemiesD3.add(new ENEMY(22, 22, 19, 26, 16, 28, 1));
+  enemiesD3.add(new ENEMY(25, 20, 19, 26, 16, 28, 1));
+  enemiesD3.add(new ENEMY(27, 23, 19, 26, 16, 28, 1));
+
+  enemiesD3.add(new ENEMY(22, 29, 28, 35, 16, 28, 1));
+  enemiesD3.add(new ENEMY(19, 31, 28, 35, 16, 28, 1));
+  enemiesD3.add(new ENEMY(25, 29, 28, 35, 16, 28, 1));
+  enemiesD3.add(new ENEMY(22, 33, 28, 35, 16, 28, 1));
+
+  enemiesD3.add(new ENEMY(33, 6, 1, 8, 31, 44, 1));
+  enemiesD3.add(new ENEMY(36, 6, 1, 8, 31, 44, 1));
+  enemiesD3.add(new ENEMY(38, 6, 1, 8, 31, 44, 1));
+  enemiesD3.add(new ENEMY(41, 6, 1, 8, 31, 44, 1));
+  enemiesD3.add(new ENEMY(36, 3, 1, 8, 31, 44, 1));
+  enemiesD3.add(new ENEMY(38, 3, 1, 8, 31, 44, 1));
+
+  enemiesD3.add(new ENEMY(34, 11, 10, 17, 31, 44, 1));
+  enemiesD3.add(new ENEMY(32, 13, 10, 17, 31, 44, 1));
+  enemiesD3.add(new ENEMY(35, 16, 10, 17, 31, 44, 1));
+  enemiesD3.add(new ENEMY(39, 11, 10, 17, 31, 44, 1));
+  enemiesD3.add(new ENEMY(42, 10, 10, 17, 31, 44, 1));
+
+  enemiesD3.add(new ENEMY(32, 23, 19, 26, 31, 44, 1));
+  enemiesD3.add(new ENEMY(35, 21, 19, 26, 31, 44, 1));
+  enemiesD3.add(new ENEMY(37, 24, 19, 26, 31, 44, 1));
+  enemiesD3.add(new ENEMY(39, 21, 19, 26, 31, 44, 1));
+  enemiesD3.add(new ENEMY(42, 23, 19, 26, 31, 44, 1));
+
+  enemiesD3.add(new ENEMY(20, 39, 37, 44, 19, 45, 1));
+  enemiesD3.add(new ENEMY(22, 41, 37, 44, 19, 45, 1));
+  enemiesD3.add(new ENEMY(25, 40, 37, 44, 19, 45, 1));
+  enemiesD3.add(new ENEMY(28, 38, 37, 44, 19, 45, 1));
+  enemiesD3.add(new ENEMY(28, 42, 37, 44, 19, 45, 1));
+  enemiesD3.add(new ENEMY(31, 40, 37, 44, 19, 45, 1));
+  enemiesD3.add(new ENEMY(34, 41, 37, 44, 19, 45, 1));
+  enemiesD3.add(new ENEMY(37, 39, 37, 44, 19, 45, 1));
+  enemiesD3.add(new ENEMY(37, 42, 37, 44, 19, 45, 1));
+  enemiesD3.add(new ENEMY(41, 39, 37, 44, 19, 45, 1));
+  enemiesD3.add(new ENEMY(41, 42, 37, 44, 19, 45, 1));
+
+
+  enemiesD4.add(new ENEMY(6, 64, 61, 69, 6, 18, 1));
+  enemiesD4.add(new ENEMY(8, 62, 61, 69, 6, 18, 1));
+  enemiesD4.add(new ENEMY(12, 62, 61, 69, 6, 18, 1));
+  enemiesD4.add(new ENEMY(16, 62, 61, 69, 6, 18, 1));
+  enemiesD4.add(new ENEMY(10, 64, 61, 69, 6, 18, 1));
+  enemiesD4.add(new ENEMY(14, 64, 61, 69, 6, 18, 1));
+  enemiesD4.add(new ENEMY(8, 66, 61, 69, 6, 18, 1));
+  enemiesD4.add(new ENEMY(12, 6, 61, 69, 6, 18, 1));
+  enemiesD4.add(new ENEMY(16, 66, 61, 69, 6, 18, 1));
+
+  enemiesD4.add(new ENEMY(15, 54, 53, 55, 14, 20, 1));
+  enemiesD4.add(new ENEMY(39, 54, 53, 55, 34, 40, 1));
+
+  enemiesD4.add(new ENEMY(6, 47, 41, 49, 6, 18, 1));
+  enemiesD4.add(new ENEMY(6, 43, 41, 49, 6, 18, 1));
+  enemiesD4.add(new ENEMY(8, 45, 41, 49, 6, 18, 1));
+  enemiesD4.add(new ENEMY(8, 41, 41, 49, 6, 18, 1));
+  enemiesD4.add(new ENEMY(10, 48, 41, 49, 6, 18, 1));
+  enemiesD4.add(new ENEMY(11, 45, 41, 49, 6, 18, 1));
+  enemiesD4.add(new ENEMY(11, 41, 41, 49, 6, 18, 1));
+  enemiesD4.add(new ENEMY(14, 48, 41, 49, 6, 18, 1));
+  enemiesD4.add(new ENEMY(14, 44, 41, 49, 6, 18, 1));
+  enemiesD4.add(new ENEMY(14, 41, 41, 49, 6, 18, 1));
+  enemiesD4.add(new ENEMY(16, 44, 41, 49, 6, 18, 1));
+
+  enemiesD4.add(new ENEMY(7, 35, 31, 39, 6, 18, 1));
+  enemiesD4.add(new ENEMY(8, 31, 31, 39, 6, 18, 1));
+  enemiesD4.add(new ENEMY(10, 37, 31, 39, 6, 18, 1));
+  enemiesD4.add(new ENEMY(12, 32, 31, 39, 6, 18, 1));
+  enemiesD4.add(new ENEMY(18, 38, 31, 39, 6, 18, 1));
+  enemiesD4.add(new ENEMY(17, 32, 31, 39, 6, 18, 1));
+
+  enemiesD4.add(new ENEMY(21, 58, 51, 59, 21, 33, 1));
+  enemiesD4.add(new ENEMY(21, 51, 51, 59, 21, 33, 1));
+  enemiesD4.add(new ENEMY(33, 58, 51, 59, 21, 33, 1));
+  enemiesD4.add(new ENEMY(33, 51, 51, 59, 21, 33, 1));
+  enemiesD4.add(new ENEMY(25, 53, 51, 59, 21, 33, 1));
+  enemiesD4.add(new ENEMY(25, 55, 51, 59, 21, 33, 1));
+  enemiesD4.add(new ENEMY(29, 53, 51, 59, 21, 33, 1));
+  enemiesD4.add(new ENEMY(29, 55, 51, 59, 21, 33, 1));
+
+  enemiesD4.add(new ENEMY(23, 46, 41, 49, 21, 33, 1));
+  enemiesD4.add(new ENEMY(23, 41, 41, 49, 21, 33, 1));
+  enemiesD4.add(new ENEMY(31, 42, 41, 49, 21, 33, 1));
+
+  enemiesD4.add(new ENEMY(23, 38, 31, 39, 21, 33, 1));
+  enemiesD4.add(new ENEMY(24, 34, 31, 39, 21, 33, 1));
+  enemiesD4.add(new ENEMY(27, 36, 31, 39, 21, 33, 1));
+  enemiesD4.add(new ENEMY(27, 32, 31, 39, 21, 33, 1));
+  enemiesD4.add(new ENEMY(30, 34, 31, 39, 21, 33, 1));
+  enemiesD4.add(new ENEMY(31, 38, 31, 39, 21, 33, 1));
+
+  enemiesD4.add(new ENEMY(39, 66, 61, 69, 36, 48, 1));
+  enemiesD4.add(new ENEMY(39, 63, 61, 69, 36, 48, 1));
+  enemiesD4.add(new ENEMY(42, 63, 61, 69, 36, 48, 1));
+  enemiesD4.add(new ENEMY(43, 65, 61, 69, 36, 48, 1));
+  enemiesD4.add(new ENEMY(47, 63, 61, 69, 36, 48, 1));
+  enemiesD4.add(new ENEMY(47, 66, 61, 69, 36, 48, 1));
+
+  enemiesD4.add(new ENEMY(40, 47, 41, 49, 36, 48, 1));
+  enemiesD4.add(new ENEMY(40, 42, 41, 49, 36, 48, 1));
+  enemiesD4.add(new ENEMY(44, 45, 41, 49, 36, 48, 1));
+  enemiesD4.add(new ENEMY(44, 44, 41, 49, 36, 48, 1));
+
+  enemiesD4.add(new ENEMY(36, 35, 31, 39, 36, 48, 1));
+  enemiesD4.add(new ENEMY(39, 33, 31, 39, 36, 48, 1));
+  enemiesD4.add(new ENEMY(40, 33, 31, 39, 36, 48, 1));
+  enemiesD4.add(new ENEMY(42, 36, 31, 39, 36, 48, 1));
+  enemiesD4.add(new ENEMY(44, 33, 31, 39, 36, 48, 1));
+  enemiesD4.add(new ENEMY(45, 33, 31, 39, 36, 48, 1));
+  enemiesD4.add(new ENEMY(48, 35, 31, 39, 36, 48, 1));
+
+  enemiesD4.add(new ENEMY(5, 5, 1, 26, 1, 48, 1));
+  enemiesD4.add(new ENEMY(6, 13, 1, 26, 1, 48, 1));
+  enemiesD4.add(new ENEMY(7, 20, 1, 26, 1, 48, 1));
+  enemiesD4.add(new ENEMY(18, 20, 1, 26, 1, 48, 1));
+  enemiesD4.add(new ENEMY(18, 13, 1, 26, 1, 48, 1));
+  enemiesD4.add(new ENEMY(20, 5, 1, 26, 1, 48, 1));
+  enemiesD4.add(new ENEMY(29, 8, 1, 26, 1, 48, 1));
+  enemiesD4.add(new ENEMY(31, 13, 1, 26, 1, 48, 1));
+  enemiesD4.add(new ENEMY(31, 20, 1, 26, 1, 48, 1));
+  enemiesD4.add(new ENEMY(42, 20, 1, 26, 1, 48, 1));
+  enemiesD4.add(new ENEMY(43, 13, 1, 26, 1, 48, 1));
+  enemiesD4.add(new ENEMY(44, 8, 1, 26, 1, 48, 1));
 }
 
 
