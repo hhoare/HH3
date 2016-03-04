@@ -110,7 +110,7 @@ void bordersAndCamera() {
   if (frogY < cameraY + 32*8 && cameraY > 0) {//ASSUMING FROG VELOCITY = 40
     cameraY = frogY - 32*8;
   }
-  println(cameraX);
+ // println(cameraX);
   
   
 }
