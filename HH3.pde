@@ -166,10 +166,20 @@ void keyPressed() {
     }
   } else {
 
-    if ((key == 'z' || key == 'Z') && types<=4 ) {
+    if ((key == 'z' || key == 'Z' || key == ' ') && types<=4 ) {
       types+=4;
     }
 
+if (mapVar==2 && key == 'b' && gx==11 && gy ==12 && coins>=500){
+healthmax++;
+health=healthmax;
+coins-=500;
+
+}
+if (key == '5'){
+
+coins+=500;
+}
 
 
     if (key == 'w' || keyCode == UP) {

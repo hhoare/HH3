@@ -151,7 +151,7 @@ void gamePlay() {
 
   drawHealth();
   drawCoins();
-
+/*
   fill(0);
   textSize(30);
   text(gx, 500, 100);
@@ -159,7 +159,7 @@ void gamePlay() {
   fill(255);
   text(types, 500, 200);
   text(completion, 500, 250);
-
+*/
 
   if ((mapVar == 1 || mapVar == 7) &&  gx == 52 && gy == 37) {
     mapVar = 2;
@@ -437,6 +437,9 @@ void gamePlay() {
     if ((d1+d2+d3)<3) {
       loadLevelFromText("OVERWORLD.txt");
     } else {
+      
+      
+      
       loadLevelFromText("OVERWORLD2.txt");
     }  
     coincolor=255;
