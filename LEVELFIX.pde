@@ -12,17 +12,9 @@ int cheapFix;
 void gamePlay() {
 
 
-  if (page == 1) {
-    background(-206680);
-  }
-
-
-
-
   if (page == 2) {
     background(-206680);
   }
-
 
   gx = (int)((frogX+16)/32);
   gy = (int)((frogY+16)/32);

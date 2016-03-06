@@ -36,7 +36,7 @@ void setup() {
   frameRate(30);
   noStroke();
 
-//  addCurley("map2num.txt");
+  //  addCurley("map2num.txt");
 
   loadLinkSprites();
   loadImages2(); // enemies
@@ -65,7 +65,12 @@ void draw() {
 
   if (page==0) {
     drawTitle();
-  } else if (page == 1) {
+  }
+  if (page == 1) {
+    story();
+  }
+
+  if (page == 2) {
     gamePlay();
   }
 }
@@ -110,9 +115,7 @@ void bordersAndCamera() {
   if (frogY < cameraY + 32*8 && cameraY > 0) {//ASSUMING FROG VELOCITY = 40
     cameraY = frogY - 32*8;
   }
- // println(cameraX);
-  
-  
+  // println(cameraX);
 }
 
 
@@ -156,6 +159,13 @@ void keyPressed() {
 
     if (key == ' ' ) {
       page=1;
+    }
+  } 
+
+
+  if (page == 1) {
+    if (key == ENTER ) {
+      page=2;
       mapVar=1;
       loadLevelFromText("OVERWORLD.txt");    //change to STOREMAP to load the store
       frogX = 56*32;
@@ -164,22 +174,24 @@ void keyPressed() {
       cameraX = 1440;
       //bordersAndCamera();
     }
-  } else {
+  }
+
+
+  if (page == 2) {
 
     if ((key == 'z' || key == 'Z' || key == ' ') && types<=4 ) {
       types+=4;
     }
 
-if (mapVar==2 && key == 'b' && gx==11 && gy ==12 && coins>=500){
-healthmax++;
-health=healthmax;
-coins-=500;
+    if (mapVar==2 && key == 'b' && gx==11 && gy ==12 && coins>=500) {
+      healthmax++;
+      health=healthmax;
+      coins-=500;
+    }
+    if (key == '5') {
 
-}
-if (key == '5'){
-
-coins+=500;
-}
+      coins+=500;
+    }
 
 
     if (key == 'w' || keyCode == UP) {
@@ -204,7 +216,7 @@ coins+=500;
 
 void keyReleased() {
 
-  if ((key == 'z' || key == 'Z') && types> 4 ) {
+  if ((key == 'z' || key == 'Z' || key == ' ') && types> 4 ) {
     types-=4;
   }
 

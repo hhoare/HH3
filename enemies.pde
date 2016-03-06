@@ -674,6 +674,7 @@ PImage bRupee;
 PImage goldRupee;
 PImage potion;
 PImage title;
+PImage princess;
 
 
 
@@ -851,6 +852,8 @@ void loadImages2() {
   goldRupee.copy(q, 48, 208, 16, 16, 0, 0, 16, 16);
   potion= new PImage(16, 16, ARGB);
   potion.copy(q, 16*6, 208, 16, 16, 0, 0, 16, 16);
+  princess= new PImage(16, 16, ARGB);
+  princess.copy(q, 16*7, 208, 16, 16, 0, 0, 16, 16);
 }
 
 //items and chars pimages
