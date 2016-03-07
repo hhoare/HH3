@@ -360,7 +360,7 @@ void gamePlay() {
   ////////////////////////////////////// DUNGEON EXITS
 
   if (mapVar == 3 &&  gx == 1 && gy == 11) {    
-    //completion++;
+    completion++;
     d1=1;
     mapVar = 1;
     storeVar=1;
@@ -381,7 +381,7 @@ void gamePlay() {
   }
 
   if (mapVar == 4 &&  gx == 1 && gy == 16) {    
-    //completion++;
+    completion++;
     d2=1;
     mapVar = 1;
     storeVar=1;
@@ -402,7 +402,7 @@ void gamePlay() {
   }
 
   if (mapVar == 5 &&  gx == 19 && gy == 43) {    
-    //   completion++;
+       completion++;
     d3=1;
     mapVar = 1;
     storeVar=1;
@@ -423,18 +423,14 @@ void gamePlay() {
   }
 
   if (mapVar == 6 &&  gx == 1 && gy == 1) {    
-  //  completion++;
+    completion++;
   
     mapVar = 1;
     storeVar=1;
-    if ((d1+d2+d3)<3) {
-      loadLevelFromText("OVERWORLD.txt");
-    } else {
-      
-      
-      
-      loadLevelFromText("OVERWORLD2.txt");
-    }  
+if (completion>3){
+page =3;
+
+}    
     coincolor=255;
     frogX = 32*108;
     frogY = 32*5;

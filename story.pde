@@ -1,9 +1,6 @@
-int storycounter;
+//int storycounter;
 
 void story() {
-
-
-
   background(#1BA032);
   fill(0);
   textSize(25);
@@ -18,4 +15,13 @@ void story() {
   text("GOOD LUCK",85,400);
   textSize(25);
   text("ENTER TO BEGIN",200,450);
+}
+
+
+void win(){
+background(#0ACB4F);
+fill(0);
+text("you win",200,200);
+
+
 }

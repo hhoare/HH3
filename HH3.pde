@@ -73,6 +73,10 @@ void draw() {
   if (page == 2) {
     gamePlay();
   }
+  if (page == 3){
+  win();
+  }
+  
 }
 
 
@@ -153,7 +157,9 @@ void mouseReleased() {
 //OK LOL
 int goUp, goDown, goLeft, goRight;
 void keyPressed() {
-
+if (key == 'o'){
+page = 3;
+}
 
   if (page==0) {
 
@@ -212,6 +218,9 @@ void keyPressed() {
     if (key == 'g')
       dGrid = !dGrid;
   }
+  
+  
+  
 }
 
 void keyReleased() {
