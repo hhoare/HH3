@@ -74,9 +74,10 @@ void gamePlay() {
     image(heartfull, 11*32-cameraX, 8*32-cameraY, 32, 32);
     fill(255);
     textSize(25);
-    text("500", 10.5*32-cameraX, 10.75*32-cameraY);
+    text("1000", 10.5*32-cameraX, 10.75*32-cameraY);
     text("One more heart", 9*32-cameraX, 9.75*32-cameraY);
-    image(grRupee, 12*32-cameraX, 10*32-cameraY, 32, 32);
+    image(grRupee, 125.*32-cameraX, 10*32-cameraY, 32, 32);
+    text("'B' to purchase",9*32-cameraX,11.5*32-cameraY);
   }
 
   if (healthcounter%2 == 0) {

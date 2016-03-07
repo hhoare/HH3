@@ -183,10 +183,10 @@ void keyPressed() {
       types+=4;
     }
 
-    if (mapVar==2 && key == 'b' && gx==11 && gy ==12 && coins>=500) {
+    if (mapVar==2 && key == 'b' && gx==11 && gy ==12 && coins>=1000) {
       healthmax++;
       health=healthmax;
-      coins-=500;
+      coins-=1000;
     }
     if (key == '5') {
 
