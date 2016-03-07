@@ -679,6 +679,7 @@ PImage princess2;
 
 PImage t1;
 
+PImage shop;
 
 
 
@@ -863,6 +864,9 @@ void loadImages2() {
 
   t1= new PImage(20, 20, ARGB);             //the triforce
   t1.copy(q, 70, 185, 20, 20, 0, 0, 20, 20);
+
+  shop= new PImage(48, 32, ARGB);
+  shop.copy(q, 16*4, 16*2, 48, 32, 0, 0, 48, 32);
 }
 
 //items and chars pimages

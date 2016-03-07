@@ -144,15 +144,15 @@ void gamePlay() {
 
   drawHealth();
   drawCoins();
-/*
+
   fill(0);
   textSize(30);
-  text(gx, 500, 100);
-  text(gy, 500, 150);
-  fill(255);
-  text(types, 500, 200);
-  text(completion, 500, 250);
-*/
+  text(gx, 500, 200);
+  text(gy, 500, 250);
+//  fill(255);
+//  text(types, 500, 200);
+//  text(completion, 500, 250);
+
 
   if ((mapVar == 1 || mapVar == 7) &&  gx == 52 && gy == 37) {
     mapVar = 2;
