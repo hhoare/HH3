@@ -22,6 +22,8 @@ void story() {
 void win() {
   background(#0ACB4F);
   fill(0);
-  image(t1, 300, 50, 20*3, 20*3);
-  image(princess2,298,110,32*2, 32*2);
+  image(t1, 300-20, 50-20, 20*3, 20*3);
+  image(princess2,298-20,110-20,32*2, 32*2);
+  textSize(30);
+  text("              Congratulations!\nYou've gotten through all 4 dungeons\n      and now the princess is free!\nYou've been awarded three triangles!",60,200);
 }
