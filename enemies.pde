@@ -675,6 +675,10 @@ PImage goldRupee;
 PImage potion;
 PImage title;
 PImage princess;
+PImage princess2;
+
+PImage t1;
+
 
 
 
@@ -854,6 +858,11 @@ void loadImages2() {
   potion.copy(q, 16*6, 208, 16, 16, 0, 0, 16, 16);
   princess= new PImage(16, 16, ARGB);
   princess.copy(q, 16*7, 208, 16, 16, 0, 0, 16, 16);
+  princess2= new PImage(16, 16, ARGB);
+  princess2.copy(q, 16*8, 208, 16, 16, 0, 0, 16, 16);
+
+  t1= new PImage(20, 20, ARGB);             //the triforce
+  t1.copy(q, 70, 185, 20, 20, 0, 0, 20, 20);
 }
 
 //items and chars pimages
