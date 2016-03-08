@@ -724,7 +724,7 @@ void populateArrays() {
 
 
   enemiesD2.add(new ENEMY(33, 37, 37, 44, 31, 43, 1));
-  enemiesD2.add(new ENEMY(31, 37, 37, 44, 31, 43, 1));
+ // enemiesD2.add(new ENEMY(31, 37, 37, 44, 31, 43, 1));
   enemiesD2.add(new ENEMY(31, 43, 37, 44, 31, 43, 1));
   enemiesD2.add(new ENEMY(37, 39, 37, 44, 31, 43, 1));
   enemiesD2.add(new ENEMY(41, 37, 37, 44, 31, 43, 1));
