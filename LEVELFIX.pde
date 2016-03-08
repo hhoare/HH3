@@ -77,35 +77,35 @@ void gamePlay() {
     text("1000", 10.5*32-cameraX, 10.75*32-cameraY);
     text("One more heart", 9*32-cameraX, 9.75*32-cameraY);
     image(grRupee, 125.*32-cameraX, 10*32-cameraY, 32, 32);
-    text("'B' to purchase",9*32-cameraX,11.5*32-cameraY);
+    text("'B' to purchase", 9*32-cameraX, 11.5*32-cameraY);
   }
 
   if (healthcounter%2 == 0) {
     drawLink();
   }
-  
+
   if (health == 0) {
-   page=1;
-   loadLevelFromText("OVERWORLD.txt");    //change to STOREMAP to load the store
-   completion = 0;
-   d1=0;
-   d2=0;
-   d3=0;
-   healthmax=3;
-   health=healthmax;
-   coins=0;
-   mapVar=1;
-   frogX = 56*32;
-   frogY = 46*32;
-   // cameraY = 1120;
-   // cameraX = 1440;
-   cheapFix=0;
-   u=0;
-   d=0;
-   r=0;
-   l=0;
-   }
-   
+    page=1;
+    loadLevelFromText("OVERWORLD.txt");    //change to STOREMAP to load the store
+    completion = 0;
+    d1=0;
+    d2=0;
+    d3=0;
+    healthmax=3;
+    health=healthmax;
+    coins=0;
+    mapVar=1;
+    frogX = 56*32;
+    frogY = 46*32;
+    // cameraY = 1120;
+    // cameraX = 1440;
+    cheapFix=0;
+    u=0;
+    d=0;
+    r=0;
+    l=0;
+  }
+
 
   if (mapVar == 1 ) {                               //OVERWORLD
     for (int i=0; i < enemies.size (); i++) {
@@ -149,9 +149,9 @@ void gamePlay() {
   textSize(30);
   text(gx, 500, 200);
   text(gy, 500, 250);
-//  fill(255);
-//  text(types, 500, 200);
-//  text(completion, 500, 250);
+  //  fill(255);
+  //  text(types, 500, 200);
+  //  text(completion, 500, 250);
 
 
   if ((mapVar == 1 || mapVar == 7) &&  gx == 52 && gy == 37) {
@@ -402,7 +402,7 @@ void gamePlay() {
   }
 
   if (mapVar == 5 &&  gx == 19 && gy == 43) {    
-       completion++;
+    completion++;
     d3=1;
     mapVar = 1;
     storeVar=1;
@@ -424,13 +424,12 @@ void gamePlay() {
 
   if (mapVar == 6 &&  gx == 1 && gy == 1) {    
     completion++;
-  
+
     mapVar = 1;
     storeVar=1;
-if (completion>3){
-page =3;
-
-}    
+    if (completion>3) {
+      page =3;
+    }    
     coincolor=255;
     frogX = 32*108;
     frogY = 32*5;
@@ -466,14 +465,14 @@ void drawTitle() {
   image(title, 0, 0, 320*2, 240*2);
   fill(0);
   textSize(50);
-  // textFont(titlefont, 32);
-  text("LINK'S", 250, 150);
-  text("STORY", 245, 210);
+  textFont(myfont, 64);
+  text("LINK'S", 200, 150);
+  text("STORY", 195, 210);
   //stroke(80);
   textSize(20);
-  text("PRESS SPACE TO BEGIN", 210, 300);
+  text("PRESS SPACE TO BEGIN", 210-25, 300);
   textSize(15);
-  text("By Henry Hoare", 265, 245);
+  text("By Henry Hoare", 265-25, 245);
 }
 
 void loadLinkSprites() {
@@ -724,7 +723,7 @@ void populateArrays() {
 
 
   enemiesD2.add(new ENEMY(33, 37, 37, 44, 31, 43, 1));
- // enemiesD2.add(new ENEMY(31, 37, 37, 44, 31, 43, 1));
+  // enemiesD2.add(new ENEMY(31, 37, 37, 44, 31, 43, 1));
   enemiesD2.add(new ENEMY(31, 43, 37, 44, 31, 43, 1));
   enemiesD2.add(new ENEMY(37, 39, 37, 44, 31, 43, 1));
   enemiesD2.add(new ENEMY(41, 37, 37, 44, 31, 43, 1));

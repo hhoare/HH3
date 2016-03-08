@@ -1,5 +1,7 @@
 /* @pjs preload="data/hhtitle.png, data/hhlink.png, data/hhenemies_items_chars.png, data/hhmaptiles.png"; */
 
+PFont myfont;
+
 int page = 0;
 
 int frogX = 32*5;
@@ -35,6 +37,10 @@ void setup() {
   size(640, 480);//ASSUMING FROG VELOCITY = 40
   frameRate(30);
   noStroke();
+  String[] fontList = PFont.list();
+  printArray(fontList);
+  
+  myfont = createFont("LucidaHandwriting-Italic", 32);
 
   //  addCurley("map2num.txt");
 
