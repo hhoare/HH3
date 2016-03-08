@@ -722,12 +722,12 @@ void populateArrays() {
   enemiesD1.add(new ENEMY(11, 12, 11, 26, 1, 13, 3));
 
 
-  enemiesD2.add(new ENEMY(33, 37, 37, 44, 31, 43, 1));
+  enemiesD2.add(new ENEMY(33, 37, 37, 44, 31, 43, 8));
   // enemiesD2.add(new ENEMY(31, 37, 37, 44, 31, 43, 1));
   enemiesD2.add(new ENEMY(31, 43, 37, 44, 31, 43, 1));
-  enemiesD2.add(new ENEMY(37, 39, 37, 44, 31, 43, 1));
+  enemiesD2.add(new ENEMY(37, 39, 37, 44, 31, 43, 6));
   enemiesD2.add(new ENEMY(41, 37, 37, 44, 31, 43, 1));
-  enemiesD2.add(new ENEMY(43, 42, 37, 44, 31, 43, 1));
+  enemiesD2.add(new ENEMY(43, 42, 37, 44, 31, 43, 8));
 
   enemiesD2.add(new ENEMY(32, 33, 28, 35, 31, 43, 1));
   enemiesD2.add(new ENEMY(33, 30, 28, 35, 31, 43, 1));

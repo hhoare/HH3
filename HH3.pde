@@ -37,8 +37,8 @@ void setup() {
   size(640, 480);//ASSUMING FROG VELOCITY = 40
   frameRate(30);
   noStroke();
-  String[] fontList = PFont.list();
-  printArray(fontList);
+//  String[] fontList = PFont.list();    
+//  printArray(fontList);
   
   myfont = createFont("LucidaHandwriting-Italic", 32);
 

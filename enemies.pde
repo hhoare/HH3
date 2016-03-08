@@ -425,11 +425,11 @@ class ENEMY {
     }
 
     if (type == 2) {
-      enhealth = 6;                                                           // IT DOESNT WORK IF HEALTH IS MORE THAN 1
+      enhealth = 2;                                                           // IT DOESNT WORK IF HEALTH IS MORE THAN 1
     }
 
     if (type == 3) {
-      enhealth = 1;
+      enhealth = 3;
     }
     if (type == 4) {
       enhealth = 1;
