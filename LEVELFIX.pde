@@ -737,58 +737,58 @@ void populateArrays() {
   enemiesD2.add(new ENEMY(42, 33, 28, 35, 31, 43, 1));
 
  // enemiesD2.add(new ENEMY(42, 33, 28, 35, 16, 28, 1));
-  enemiesD2.add(new ENEMY(22, 29, 28, 35, 16, 28, 1));
+  enemiesD2.add(new ENEMY(22, 29, 28, 35, 16, 28, 2));
   enemiesD2.add(new ENEMY(19, 30, 28, 35, 16, 28, 1));
-  enemiesD2.add(new ENEMY(19, 33, 28, 35, 16, 28, 1));
+  enemiesD2.add(new ENEMY(19, 33, 28, 35, 16, 28, 8));
 
   enemiesD2.add(new ENEMY(19, 24, 19, 26, 16, 28, 1));
-  enemiesD2.add(new ENEMY(17, 21, 19, 26, 16, 28, 1));
+  enemiesD2.add(new ENEMY(17, 21, 19, 26, 16, 28, 8));
   enemiesD2.add(new ENEMY(22, 21, 19, 26, 16, 28, 1));
   enemiesD2.add(new ENEMY(25, 23, 19, 26, 16, 28, 1));
-  enemiesD2.add(new ENEMY(28, 21, 19, 26, 16, 28, 1));
+  enemiesD2.add(new ENEMY(28, 21, 19, 26, 16, 28, 2));
 
 
-  enemiesD2.add(new ENEMY(22, 13, 10, 17, 16, 28, 1));
+  enemiesD2.add(new ENEMY(22, 13, 10, 17, 16, 28, 2));
   enemiesD2.add(new ENEMY(17, 13, 10, 17, 16, 28, 1));
   enemiesD2.add(new ENEMY(27, 14, 10, 17, 16, 28, 1));
-  enemiesD2.add(new ENEMY(22, 10, 10, 17, 16, 28, 1));
+  enemiesD2.add(new ENEMY(22, 10, 10, 17, 16, 28, 8));
 
-  enemiesD2.add(new ENEMY(34, 11, 10, 17, 31, 48, 1));
+  enemiesD2.add(new ENEMY(34, 11, 10, 17, 31, 48, 8));
   enemiesD2.add(new ENEMY(34, 15, 10, 17, 31, 48, 1));
-  enemiesD2.add(new ENEMY(37, 13, 10, 17, 31, 48, 1));
+  enemiesD2.add(new ENEMY(37, 13, 10, 17, 31, 48, 2));
   enemiesD2.add(new ENEMY(40, 11, 10, 17, 31, 48, 1));
-  enemiesD2.add(new ENEMY(40, 15, 10, 17, 31, 48, 1));
+  enemiesD2.add(new ENEMY(40, 15, 10, 17, 31, 48, 8));
 
-  enemiesD2.add(new ENEMY(41, 4, 0, 8, 31, 48, 1));
-  enemiesD2.add(new ENEMY(37, 4, 0, 8, 31, 48, 1));
-  enemiesD2.add(new ENEMY(33, 4, 0, 8, 31, 48, 1));
-  enemiesD2.add(new ENEMY(37, 1, 0, 8, 31, 48, 1));
+  enemiesD2.add(new ENEMY(41, 4, 0, 8, 31, 48, 8));
+  enemiesD2.add(new ENEMY(37, 4, 0, 8, 31, 48, 8));
+  enemiesD2.add(new ENEMY(33, 4, 0, 8, 31, 48, 8));
+  enemiesD2.add(new ENEMY(37, 1, 0, 8, 31, 48, 2));
 
-  enemiesD2.add(new ENEMY(1, 1, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(1, 1, 0, 8, 0, 29, 2));
   enemiesD2.add(new ENEMY(2, 2, 0, 8, 0, 29, 1));
-  enemiesD2.add(new ENEMY(3, 3, 0, 8, 0, 29, 1));
-  enemiesD2.add(new ENEMY(4, 4, 0, 8, 0, 29, 1));
-  enemiesD2.add(new ENEMY(3, 5, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(3, 3, 0, 8, 0, 29, 8));
+  enemiesD2.add(new ENEMY(4, 4, 0, 8, 0, 29, 2));
+  enemiesD2.add(new ENEMY(3, 5, 0, 8, 0, 29, 8));
   enemiesD2.add(new ENEMY(2, 6, 0, 8, 0, 29, 1));
-  enemiesD2.add(new ENEMY(1, 7, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(1, 7, 0, 8, 0, 29, 2));
   enemiesD2.add(new ENEMY(8, 4, 0, 8, 0, 29, 1));
-  enemiesD2.add(new ENEMY(9, 4, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(9, 4, 0, 8, 0, 29, 8));
   enemiesD2.add(new ENEMY(10, 4, 0, 8, 0, 29, 1));
-  enemiesD2.add(new ENEMY(11, 4, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(11, 4, 0, 8, 0, 29, 8));
   enemiesD2.add(new ENEMY(12, 4, 0, 8, 0, 29, 1));
-  enemiesD2.add(new ENEMY(13, 4, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(13, 4, 0, 8, 0, 29, 8));
   enemiesD2.add(new ENEMY(11, 2, 0, 8, 0, 29, 1));
   enemiesD2.add(new ENEMY(11, 6, 0, 8, 0, 29, 1));
   enemiesD2.add(new ENEMY(18, 1, 0, 8, 0, 29, 1));
-  enemiesD2.add(new ENEMY(18, 2, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(18, 2, 0, 8, 0, 29, 8));
   enemiesD2.add(new ENEMY(18, 3, 0, 8, 0, 29, 1));
-  enemiesD2.add(new ENEMY(18, 4, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(18, 4, 0, 8, 0, 29, 8));
   enemiesD2.add(new ENEMY(18, 5, 0, 8, 0, 29, 1));
-  enemiesD2.add(new ENEMY(18, 6, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(18, 6, 0, 8, 0, 29, 8));
   enemiesD2.add(new ENEMY(18, 7, 0, 8, 0, 29, 1));
   enemiesD2.add(new ENEMY(22, 4, 0, 8, 0, 29, 1));
-  enemiesD2.add(new ENEMY(25, 2, 0, 8, 0, 29, 1));
-  enemiesD2.add(new ENEMY(25, 6, 0, 8, 0, 29, 1));
+  enemiesD2.add(new ENEMY(25, 2, 0, 8, 0, 29, 8));
+  enemiesD2.add(new ENEMY(25, 6, 0, 8, 0, 29, 8));
 
   enemiesD2.add(new ENEMY(1, 10, 10, 16, 0, 29, 1));
   enemiesD2.add(new ENEMY(3, 12, 10, 16, 0, 29, 1));
