@@ -462,7 +462,7 @@ class ENEMY {
       }
     }
 
-/*
+
     if ( stopMe == 0 && (   (dist(ex1, ey1, frogX+16, frogY+16 ) < 32*4 ) &&  egx1<=rightBound && egx1>=leftBound && egy1>=upBound && egy1<=downBound) ) {//) {
 
       if (edir1 == 0) {
@@ -572,7 +572,7 @@ class ENEMY {
       }
     }
 
-*/
+
     //collision with sword
     //collision with link
 
